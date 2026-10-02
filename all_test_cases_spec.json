@@ -1,0 +1,3278 @@
+[
+  {
+    "id": "Ref",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Parameter",
+    "tech": "Assumed value",
+    "raw": "| Ref | Parameter | Assumed value |"
+  },
+  {
+    "id": "P1",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Admin email / PIN",
+    "tech": "`admin@parshwaplatinum.com` / `5829` (PIN = exactly 4 digits, numeric)",
+    "raw": "| P1 | Admin email / PIN | `admin@parshwaplatinum.com` / `5829` (PIN = exactly 4 digits, numeric) |"
+  },
+  {
+    "id": "P2",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Lockout",
+    "tech": "5 consecutive failed logins → locked 300 s; counter resets on success",
+    "raw": "| P2 | Lockout | 5 consecutive failed logins → locked 300 s; counter resets on success |"
+  },
+  {
+    "id": "P3",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Person name",
+    "tech": "2–50 chars; Unicode letters, space, `.` `'` `-`; trimmed",
+    "raw": "| P3 | Person name | 2–50 chars; Unicode letters, space, `.` `'` `-`; trimmed |"
+  },
+  {
+    "id": "P4",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Phone",
+    "tech": "exactly 10 digits, first digit 6–9, digits only",
+    "raw": "| P4 | Phone | exactly 10 digits, first digit 6–9, digits only |"
+  },
+  {
+    "id": "P5",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Resident password",
+    "tech": "6–32 chars",
+    "raw": "| P5 | Resident password | 6–32 chars |"
+  },
+  {
+    "id": "P6",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Flat number",
+    "tech": "floor 1–7 + unit 01–04 → 28 flats (101–104 … 701–704)",
+    "raw": "| P6 | Flat number | floor 1–7 + unit 01–04 → 28 flats (101–104 … 701–704) |"
+  },
+  {
+    "id": "P7",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Guard invite code",
+    "tech": "exactly 8 alphanumeric chars, case-insensitive input",
+    "raw": "| P7 | Guard invite code | exactly 8 alphanumeric chars, case-insensitive input |"
+  },
+  {
+    "id": "P8",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Gate OTP",
+    "tech": "exactly 6 digits `000000`–`999999`, single-use, unique among active passes",
+    "raw": "| P8 | Gate OTP | exactly 6 digits `000000`–`999999`, single-use, unique among active passes |"
+  },
+  {
+    "id": "P9",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Pre-approval",
+    "tech": "validity duration 15 min – 24 h; start ≥ now; max 10 active passes per flat",
+    "raw": "| P9 | Pre-approval | validity duration 15 min – 24 h; start ≥ now; max 10 active passes per flat |"
+  },
+  {
+    "id": "P10",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Intercom ring timeout",
+    "tech": "60 s → status \"No response\"",
+    "raw": "| P10 | Intercom ring timeout | 60 s → status \"No response\" |"
+  },
+  {
+    "id": "P11",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Notice",
+    "tech": "title 1–100 chars, body 1–1000 chars, category ∈ {General, Urgent, Maintenance}",
+    "raw": "| P11 | Notice | title 1–100 chars, body 1–1000 chars, category ∈ {General, Urgent, Maintenance} |"
+  },
+  {
+    "id": "P12",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Toast",
+    "tech": "top = 54px, auto-dismiss 4000 ms (±300 ms), close (×) button",
+    "raw": "| P12 | Toast | top = 54px, auto-dismiss 4000 ms (±300 ms), close (×) button |"
+  },
+  {
+    "id": "P13",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Buttons",
+    "tech": "weight 700; height 44px standard / 36px small; radius 12px / 10px",
+    "raw": "| P13 | Buttons | weight 700; height 44px standard / 36px small; radius 12px / 10px |"
+  },
+  {
+    "id": "P14",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Bottom nav",
+    "tech": "≤ 4 tabs; tap target ≥ 48dp",
+    "raw": "| P14 | Bottom nav | ≤ 4 tabs; tap target ≥ 48dp |"
+  },
+  {
+    "id": "P15",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Resident SOS",
+    "tech": "max 1 per flat per 60 s; extra taps ignored with message",
+    "raw": "| P15 | Resident SOS | max 1 per flat per 60 s; extra taps ignored with message |"
+  },
+  {
+    "id": "P16",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Visitor name",
+    "tech": "2–50 chars (as P3); vehicle no. optional 0–15 alphanumeric",
+    "raw": "| P16 | Visitor name | 2–50 chars (as P3); vehicle no. optional 0–15 alphanumeric |"
+  },
+  {
+    "id": "P17",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Guard incident note",
+    "tech": "1–500 chars",
+    "raw": "| P17 | Guard incident note | 1–500 chars |"
+  },
+  {
+    "id": "P18",
+    "section": "1. Assumed parameters (confirm with product owner; every boundary below derives from these)",
+    "type": "Flats capacity",
+    "tech": "28",
+    "raw": "| P18 | Flats capacity | 28 |"
+  },
+  {
+    "id": "AL-01",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Email `admin@parshwaplatinum.com`, PIN `5829`, Login",
+    "expected": "Admin dashboard opens; session set; keypad click plays",
+    "raw": "| AL-01 | P | EP-V | Email `admin@parshwaplatinum.com`, PIN `5829`, Login | Admin dashboard opens; session set; keypad click plays |"
+  },
+  {
+    "id": "AL-02",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Email `ADMIN@ParshwaPlatinum.COM`, PIN `5829`",
+    "expected": "Login succeeds (email case-insensitive)",
+    "raw": "| AL-02 | P | EP-V | Email `ADMIN@ParshwaPlatinum.COM`, PIN `5829` | Login succeeds (email case-insensitive) |"
+  },
+  {
+    "id": "AL-03",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Email with leading/trailing spaces, PIN `5829`",
+    "expected": "Trimmed; login succeeds",
+    "raw": "| AL-03 | P | EP-V | Email with leading/trailing spaces, PIN `5829` | Trimmed; login succeeds |"
+  },
+  {
+    "id": "AL-04",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "PIN empty (0 digits)",
+    "expected": "Rejected; validation message; no request sent",
+    "raw": "| AL-04 | N | BVA | PIN empty (0 digits) | Rejected; validation message; no request sent |"
+  },
+  {
+    "id": "AL-05",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "PIN `5` (1 digit)",
+    "expected": "Rejected",
+    "raw": "| AL-05 | N | BVA | PIN `5` (1 digit) | Rejected |"
+  },
+  {
+    "id": "AL-06",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "PIN `582` (3 digits)",
+    "expected": "Rejected; login button disabled or error",
+    "raw": "| AL-06 | N | BVA | PIN `582` (3 digits) | Rejected; login button disabled or error |"
+  },
+  {
+    "id": "AL-07",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "PIN `58290` (5 digits)",
+    "expected": "Input capped at 4 digits (then behaves as `5829`) **or** rejected; never a login with 5 stored digits",
+    "raw": "| AL-07 | N | BVA | PIN `58290` (5 digits) | Input capped at 4 digits (then behaves as `5829`) **or** rejected; never a login with 5 stored digits |"
+  },
+  {
+    "id": "AL-08",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "PIN `5828` (value just below)",
+    "expected": "Invalid credentials; buzzer; generic message",
+    "raw": "| AL-08 | N | BVA | PIN `5828` (value just below) | Invalid credentials; buzzer; generic message |"
+  },
+  {
+    "id": "AL-09",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "PIN `5830` (value just above)",
+    "expected": "Invalid credentials",
+    "raw": "| AL-09 | N | BVA | PIN `5830` (value just above) | Invalid credentials |"
+  },
+  {
+    "id": "AL-10",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "PIN `58a9` (letter)",
+    "expected": "Letter rejected at input or login fails",
+    "raw": "| AL-10 | N | EP-I | PIN `58a9` (letter) | Letter rejected at input or login fails |"
+  },
+  {
+    "id": "AL-11",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "PIN `58#9` / `58 9` (symbol/space)",
+    "expected": "Rejected",
+    "raw": "| AL-11 | N | EP-I | PIN `58#9` / `58 9` (symbol/space) | Rejected |"
+  },
+  {
+    "id": "AL-12",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "PIN `0000` (well-formed wrong)",
+    "expected": "Invalid credentials",
+    "raw": "| AL-12 | N | EP-I | PIN `0000` (well-formed wrong) | Invalid credentials |"
+  },
+  {
+    "id": "AL-13",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Email empty, PIN `5829`",
+    "expected": "Field validation; no login",
+    "raw": "| AL-13 | N | EP-I | Email empty, PIN `5829` | Field validation; no login |"
+  },
+  {
+    "id": "AL-14",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Email `admin.parshwaplatinum.com` (no @)",
+    "expected": "Format error",
+    "raw": "| AL-14 | N | EP-I | Email `admin.parshwaplatinum.com` (no @) | Format error |"
+  },
+  {
+    "id": "AL-15",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Email `admin@` (no domain)",
+    "expected": "Format error",
+    "raw": "| AL-15 | N | EP-I | Email `admin@` (no domain) | Format error |"
+  },
+  {
+    "id": "AL-16",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Email `secretary@parshwaplatinum.com`, PIN `5829`",
+    "expected": "Invalid credentials; same message as wrong PIN (no user enumeration)",
+    "raw": "| AL-16 | N | EP-I | Email `secretary@parshwaplatinum.com`, PIN `5829` | Invalid credentials; same message as wrong PIN (no user enumeration) |"
+  },
+  {
+    "id": "AL-17",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Email of 254 chars, valid format, unknown user",
+    "expected": "Generic invalid-credentials",
+    "raw": "| AL-17 | N | BVA | Email of 254 chars, valid format, unknown user | Generic invalid-credentials |"
+  },
+  {
+    "id": "AL-18",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Email of 255 chars",
+    "expected": "Format/length error",
+    "raw": "| AL-18 | N | BVA | Email of 255 chars | Format/length error |"
+  },
+  {
+    "id": "AL-19",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Both fields empty",
+    "expected": "Both fields flagged; no request",
+    "raw": "| AL-19 | N | EP-I | Both fields empty | Both fields flagged; no request |"
+  },
+  {
+    "id": "AL-20",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Email `' OR 1=1 --`, PIN `5829`; then `<script>alert(1)</script>`",
+    "expected": "Login fails; no script runs; no DB error text",
+    "raw": "| AL-20 | N | SEC | Email `' OR 1=1 --`, PIN `5829`; then `<script>alert(1)</script>` | Login fails; no script runs; no DB error text |"
+  },
+  {
+    "id": "AL-21",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "4 consecutive wrong PINs, then correct PIN",
+    "expected": "4th failure NOT locked; correct PIN logs in; counter resets",
+    "raw": "| AL-21 | N | BVA | 4 consecutive wrong PINs, then correct PIN | 4th failure NOT locked; correct PIN logs in; counter resets |"
+  },
+  {
+    "id": "AL-22",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "5 consecutive wrong PINs",
+    "expected": "5th failure triggers lock; message shows lock/wait",
+    "raw": "| AL-22 | N | BVA | 5 consecutive wrong PINs | 5th failure triggers lock; message shows lock/wait |"
+  },
+  {
+    "id": "AL-23",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "After lock, enter correct PIN at ~299 s",
+    "expected": "Still rejected",
+    "raw": "| AL-23 | N | BVA | After lock, enter correct PIN at ~299 s | Still rejected |"
+  },
+  {
+    "id": "AL-24",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "After lock, enter correct PIN at ~301 s",
+    "expected": "Login succeeds; counter reset",
+    "raw": "| AL-24 | P | BVA | After lock, enter correct PIN at ~301 s | Login succeeds; counter reset |"
+  },
+  {
+    "id": "AL-25",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "6th attempt (correct PIN) during lock",
+    "expected": "Rejected with lock message",
+    "raw": "| AL-25 | N | BVA | 6th attempt (correct PIN) during lock | Rejected with lock message |"
+  },
+  {
+    "id": "AL-26",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Inspect page source, JS bundle, localStorage, network for plaintext `5829`",
+    "expected": "Not present in shipped client code, storage, or payloads (hash/server verify only)",
+    "raw": "| AL-26 | N | SEC | Inspect page source, JS bundle, localStorage, network for plaintext `5829` | Not present in shipped client code, storage, or payloads (hash/server verify only) |"
+  },
+  {
+    "id": "AL-27",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Logged out; open admin dashboard URL directly",
+    "expected": "Redirect to login; no admin data rendered",
+    "raw": "| AL-27 | N | SEC | Logged out; open admin dashboard URL directly | Redirect to login; no admin data rendered |"
+  },
+  {
+    "id": "AL-28",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Log in with RES_A credentials on Admin screen (Depends: BOOT)",
+    "expected": "Rejected",
+    "raw": "| AL-28 | N | SEC | Log in with RES_A credentials on Admin screen (Depends: BOOT) | Rejected |"
+  },
+  {
+    "id": "AL-29",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Type PIN",
+    "expected": "Digits masked; toggle (if present) reveals/hides",
+    "raw": "| AL-29 | P | UI | Type PIN | Digits masked; toggle (if present) reveals/hides |"
+  },
+  {
+    "id": "AL-30",
+    "section": "4. Admin login – **[fresh]**",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Login, refresh page",
+    "expected": "Session persists or clean re-auth; no crash",
+    "raw": "| AL-30 | P | EP-V | Login, refresh page | Session persists or clean re-auth; no crash |"
+  },
+  {
+    "id": "AO-01",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Fresh boot, view overview",
+    "expected": "Occupied flats **0**/28; visitors inside **0**; no fake rows",
+    "raw": "| AO-01 | P | BVA | Fresh boot, view overview | Occupied flats **0**/28; visitors inside **0**; no fake rows |"
+  },
+  {
+    "id": "AO-02",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Open flats directory",
+    "expected": "Exactly 28 unique flats: 101–104 … 701–704; 7 floors × 4",
+    "raw": "| AO-02 | P | EP-V | Open flats directory | Exactly 28 unique flats: 101–104 … 701–704; 7 floors × 4 |"
+  },
+  {
+    "id": "AO-03",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "UI",
+    "steps": "View every list (visitors, notices, requests)",
+    "expected": "Each shows icon + prompt empty state",
+    "raw": "| AO-03 | P | UI | View every list (visitors, notices, requests) | Each shows icon + prompt empty state |"
+  },
+  {
+    "id": "AO-04",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Approve RES_A only (Depends: BOOT reset)",
+    "expected": "Occupied = **1**/28; flat 101 marked occupied",
+    "raw": "| AO-04 | P | BVA | Approve RES_A only (Depends: BOOT reset) | Occupied = **1**/28; flat 101 marked occupied |"
+  },
+  {
+    "id": "AO-05",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Approve residents in 27 different flats",
+    "expected": "Occupied = **27**/28",
+    "raw": "| AO-05 | P | BVA | Approve residents in 27 different flats | Occupied = **27**/28 |"
+  },
+  {
+    "id": "AO-06",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Approve resident in the 28th flat",
+    "expected": "Occupied = **28**/28 (max)",
+    "raw": "| AO-06 | P | BVA | Approve resident in the 28th flat | Occupied = **28**/28 (max) |"
+  },
+  {
+    "id": "AO-07",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Approve 2nd resident in an already occupied flat",
+    "expected": "Occupied count stays same (flat counted once)",
+    "raw": "| AO-07 | N | BVA | Approve 2nd resident in an already occupied flat | Occupied count stays same (flat counted once) |"
+  },
+  {
+    "id": "AO-08",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Reject a pending resident",
+    "expected": "Occupied unchanged",
+    "raw": "| AO-08 | N | EP-I | Reject a pending resident | Occupied unchanged |"
+  },
+  {
+    "id": "AO-09",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Visitors inside 0 → 1 → 0 via approve/enter/checkout",
+    "expected": "Count 0, 1, 0 respectively, updated without reload",
+    "raw": "| AO-09 | P | BVA | Visitors inside 0 → 1 → 0 via approve/enter/checkout | Count 0, 1, 0 respectively, updated without reload |"
+  },
+  {
+    "id": "AO-10",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Search directory `999`, `10`, empty",
+    "expected": "Empty-state or full list for empty; no crash",
+    "raw": "| AO-10 | N | EP-I | Search directory `999`, `10`, empty | Empty-state or full list for empty; no crash |"
+  },
+  {
+    "id": "AO-11",
+    "section": "5. Admin overview, directory, occupancy – **[fresh]** for AO-01..03",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Search `204`",
+    "expected": "Only flat 204 shown",
+    "raw": "| AO-11 | P | EP-V | Search `204` | Only flat 204 shown |"
+  },
+  {
+    "id": "AQ-01",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Fresh boot, open queue",
+    "expected": "0 requests; empty state",
+    "raw": "| AQ-01 | P | BVA | Fresh boot, open queue | 0 requests; empty state |"
+  },
+  {
+    "id": "AQ-02",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Pending resident → **Approve**",
+    "expected": "Status approved; resident can log in; leaves queue; toast",
+    "raw": "| AQ-02 | P | ST | Pending resident → **Approve** | Status approved; resident can log in; leaves queue; toast |"
+  },
+  {
+    "id": "AQ-03",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Pending resident → **Reject**",
+    "expected": "Status rejected; login blocked with rejection message",
+    "raw": "| AQ-03 | P | ST | Pending resident → **Reject** | Status rejected; login blocked with rejection message |"
+  },
+  {
+    "id": "AQ-04",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Pending guard → **Approve**",
+    "expected": "Guard can open gate console",
+    "raw": "| AQ-04 | P | ST | Pending guard → **Approve** | Guard can open gate console |"
+  },
+  {
+    "id": "AQ-05",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Pending guard → **Reject**",
+    "expected": "Guard login blocked",
+    "raw": "| AQ-05 | P | ST | Pending guard → **Reject** | Guard login blocked |"
+  },
+  {
+    "id": "AQ-06",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Pending user tries to log in",
+    "expected": "\"Pending approval\" screen; no dashboard/API data",
+    "raw": "| AQ-06 | N | ST | Pending user tries to log in | \"Pending approval\" screen; no dashboard/API data |"
+  },
+  {
+    "id": "AQ-07",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Rejected user tries to log in",
+    "expected": "Blocked; no dashboard",
+    "raw": "| AQ-07 | N | ST | Rejected user tries to log in | Blocked; no dashboard |"
+  },
+  {
+    "id": "AQ-08",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Approve an already approved request (stale second admin tab)",
+    "expected": "\"Already processed\"; no state change or duplicate toast",
+    "raw": "| AQ-08 | N | ST | Approve an already approved request (stale second admin tab) | \"Already processed\"; no state change or duplicate toast |"
+  },
+  {
+    "id": "AQ-09",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Double-tap Approve",
+    "expected": "Processed exactly once",
+    "raw": "| AQ-09 | N | ST | Double-tap Approve | Processed exactly once |"
+  },
+  {
+    "id": "AQ-10",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "DT",
+    "steps": "Decision table: {resident, guard} × {approve, reject}",
+    "expected": "4 outcomes each yield correct final status and correct role access",
+    "raw": "| AQ-10 | P | DT | Decision table: {resident, guard} × {approve, reject} | 4 outcomes each yield correct final status and correct role access |"
+  },
+  {
+    "id": "AQ-11",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "As RES_A/GUARD_1 call approve API/RPC",
+    "expected": "Denied (403/RLS)",
+    "raw": "| AQ-11 | N | SEC | As RES_A/GUARD_1 call approve API/RPC | Denied (403/RLS) |"
+  },
+  {
+    "id": "AQ-12",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "New registration arrives while queue open",
+    "expected": "Appears without manual reload (or within defined refresh)",
+    "raw": "| AQ-12 | P | EP-V | New registration arrives while queue open | Appears without manual reload (or within defined refresh) |"
+  },
+  {
+    "id": "AQ-13",
+    "section": "6. Approval queue (Admin) – Depends: pending requests",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Queue with 1 and with 10 pending requests",
+    "expected": "List renders; actions on the last item reachable above nav bar",
+    "raw": "| AQ-13 | P | BVA | Queue with 1 and with 10 pending requests | List renders; actions on the last item reachable above nav bar |"
+  },
+  {
+    "id": "NB-01",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Category General, title `Water tank cleaning`, body `Tomorrow 10am`, Publish",
+    "expected": "Listed for Admin, Resident, Guard; toast",
+    "raw": "| NB-01 | P | EP-V | Category General, title `Water tank cleaning`, body `Tomorrow 10am`, Publish | Listed for Admin, Resident, Guard; toast |"
+  },
+  {
+    "id": "NB-02",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Category Urgent",
+    "expected": "Shown with urgent styling at/near top",
+    "raw": "| NB-02 | P | EP-V | Category Urgent | Shown with urgent styling at/near top |"
+  },
+  {
+    "id": "NB-03",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Category Maintenance",
+    "expected": "Correct badge",
+    "raw": "| NB-03 | P | EP-V | Category Maintenance | Correct badge |"
+  },
+  {
+    "id": "NB-04",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "No category selected",
+    "expected": "Validation error or default is explicit; not silently blank",
+    "raw": "| NB-04 | N | EP-I | No category selected | Validation error or default is explicit; not silently blank |"
+  },
+  {
+    "id": "NB-05",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Title length 0",
+    "expected": "Rejected",
+    "raw": "| NB-05 | N | BVA | Title length 0 | Rejected |"
+  },
+  {
+    "id": "NB-06",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Title length 1 (`A`)",
+    "expected": "Accepted",
+    "raw": "| NB-06 | P | BVA | Title length 1 (`A`) | Accepted |"
+  },
+  {
+    "id": "NB-07",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Title length 100",
+    "expected": "Accepted; renders wrapped",
+    "raw": "| NB-07 | P | BVA | Title length 100 | Accepted; renders wrapped |"
+  },
+  {
+    "id": "NB-08",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Title length 101",
+    "expected": "Rejected or blocked at input (max 100)",
+    "raw": "| NB-08 | N | BVA | Title length 101 | Rejected or blocked at input (max 100) |"
+  },
+  {
+    "id": "NB-09",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Body length 0",
+    "expected": "Rejected",
+    "raw": "| NB-09 | N | BVA | Body length 0 | Rejected |"
+  },
+  {
+    "id": "NB-10",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Body length 1",
+    "expected": "Accepted",
+    "raw": "| NB-10 | P | BVA | Body length 1 | Accepted |"
+  },
+  {
+    "id": "NB-11",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Body length 1000",
+    "expected": "Accepted; no layout break",
+    "raw": "| NB-11 | P | BVA | Body length 1000 | Accepted; no layout break |"
+  },
+  {
+    "id": "NB-12",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Body length 1001",
+    "expected": "Rejected/blocked",
+    "raw": "| NB-12 | N | BVA | Body length 1001 | Rejected/blocked |"
+  },
+  {
+    "id": "NB-13",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Title whitespace only `   `",
+    "expected": "Rejected",
+    "raw": "| NB-13 | N | EP-I | Title whitespace only `   ` | Rejected |"
+  },
+  {
+    "id": "NB-14",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Title `<img src=x onerror=alert(1)>`",
+    "expected": "Rendered as plain text; no script runs",
+    "raw": "| NB-14 | N | SEC | Title `<img src=x onerror=alert(1)>` | Rendered as plain text; no script runs |"
+  },
+  {
+    "id": "NB-15",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Title with emoji `🚧 Lift` and Gujarati/Hindi text; body with newlines",
+    "expected": "Displays correctly; newlines preserved",
+    "raw": "| NB-15 | P | EP-V | Title with emoji `🚧 Lift` and Gujarati/Hindi text; body with newlines | Displays correctly; newlines preserved |"
+  },
+  {
+    "id": "NB-16",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Edit a notice; save",
+    "expected": "Updated in every role view",
+    "raw": "| NB-16 | P | EP-V | Edit a notice; save | Updated in every role view |"
+  },
+  {
+    "id": "NB-17",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Delete → Confirm",
+    "expected": "Removed everywhere",
+    "raw": "| NB-17 | P | EP-V | Delete → Confirm | Removed everywhere |"
+  },
+  {
+    "id": "NB-18",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Delete → Cancel",
+    "expected": "Notice remains",
+    "raw": "| NB-18 | N | EP-I | Delete → Cancel | Notice remains |"
+  },
+  {
+    "id": "NB-19",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Publish 3 notices in order",
+    "expected": "Newest first (urgent pinned if implemented)",
+    "raw": "| NB-19 | P | EP-V | Publish 3 notices in order | Newest first (urgent pinned if implemented) |"
+  },
+  {
+    "id": "NB-20",
+    "section": "7. Notice board (Admin) – Depends: BOOT",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "RES_A inserts into notices via API",
+    "expected": "Denied",
+    "raw": "| NB-20 | N | SEC | RES_A inserts into notices via API | Denied |"
+  },
+  {
+    "id": "SC-01",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Open Security",
+    "expected": "8-char alphanumeric code shown",
+    "raw": "| SC-01 | P | EP-V | Open Security | 8-char alphanumeric code shown |"
+  },
+  {
+    "id": "SC-02",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Rotate → Confirm",
+    "expected": "New 8-char code ≠ old; toast",
+    "raw": "| SC-02 | P | ST | Rotate → Confirm | New 8-char code ≠ old; toast |"
+  },
+  {
+    "id": "SC-03",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Rotate → Cancel",
+    "expected": "Code unchanged",
+    "raw": "| SC-03 | N | ST | Rotate → Cancel | Code unchanged |"
+  },
+  {
+    "id": "SC-04",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Register guard with **old** code after rotation",
+    "expected": "Rejected \"Invalid invite code\"",
+    "raw": "| SC-04 | N | ST | Register guard with **old** code after rotation | Rejected \"Invalid invite code\" |"
+  },
+  {
+    "id": "SC-05",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Register guard with **new** code",
+    "expected": "Request created as pending",
+    "raw": "| SC-05 | P | ST | Register guard with **new** code | Request created as pending |"
+  },
+  {
+    "id": "SC-06",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Tap copy",
+    "expected": "Code copied; toast",
+    "raw": "| SC-06 | P | UI | Tap copy | Code copied; toast |"
+  },
+  {
+    "id": "SC-07",
+    "section": "8. Security settings and guard invite code – Depends: BOOT",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "GUARD_1/RES_A read invite code via API",
+    "expected": "Denied",
+    "raw": "| SC-07 | N | SEC | GUARD_1/RES_A read invite code via API | Denied |"
+  },
+  {
+    "id": "RR-01",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Name `Asha Patel`, phone `9876543210`, flat `101`, password `Pass@123`",
+    "expected": "Request created as pending; confirmation; appears in Admin queue",
+    "raw": "| RR-01 | P | EP-V | Name `Asha Patel`, phone `9876543210`, flat `101`, password `Pass@123` | Request created as pending; confirmation; appears in Admin queue |"
+  },
+  {
+    "id": "RR-02",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Name length 0",
+    "expected": "Rejected",
+    "raw": "| RR-02 | N | BVA | Name length 0 | Rejected |"
+  },
+  {
+    "id": "RR-03",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Name length 1 (`A`)",
+    "expected": "Rejected",
+    "raw": "| RR-03 | N | BVA | Name length 1 (`A`) | Rejected |"
+  },
+  {
+    "id": "RR-04",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Name length 2 (`Al`)",
+    "expected": "Accepted",
+    "raw": "| RR-04 | P | BVA | Name length 2 (`Al`) | Accepted |"
+  },
+  {
+    "id": "RR-05",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Name length 3",
+    "expected": "Accepted",
+    "raw": "| RR-05 | P | BVA | Name length 3 | Accepted |"
+  },
+  {
+    "id": "RR-06",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Name length 49",
+    "expected": "Accepted",
+    "raw": "| RR-06 | P | BVA | Name length 49 | Accepted |"
+  },
+  {
+    "id": "RR-07",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Name length 50",
+    "expected": "Accepted",
+    "raw": "| RR-07 | P | BVA | Name length 50 | Accepted |"
+  },
+  {
+    "id": "RR-08",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Name length 51",
+    "expected": "Rejected/blocked",
+    "raw": "| RR-08 | N | BVA | Name length 51 | Rejected/blocked |"
+  },
+  {
+    "id": "RR-09",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Name `Asha123` (digits)",
+    "expected": "Rejected",
+    "raw": "| RR-09 | N | EP-I | Name `Asha123` (digits) | Rejected |"
+  },
+  {
+    "id": "RR-10",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Name `@#$%` / emoji only",
+    "expected": "Rejected",
+    "raw": "| RR-10 | N | EP-I | Name `@#$%` / emoji only | Rejected |"
+  },
+  {
+    "id": "RR-11",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Name spaces only",
+    "expected": "Rejected",
+    "raw": "| RR-11 | N | EP-I | Name spaces only | Rejected |"
+  },
+  {
+    "id": "RR-12",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Name `  Asha  Patel  `",
+    "expected": "Trimmed/collapsed; accepted",
+    "raw": "| RR-12 | P | EP-V | Name `  Asha  Patel  ` | Trimmed/collapsed; accepted |"
+  },
+  {
+    "id": "RR-13",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Name with Unicode letters (`આશા પટેલ`)",
+    "expected": "Accepted; displayed correctly",
+    "raw": "| RR-13 | P | EP-V | Name with Unicode letters (`આશા પટેલ`) | Accepted; displayed correctly |"
+  },
+  {
+    "id": "RR-14",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Phone 9 digits `987654321`",
+    "expected": "Rejected",
+    "raw": "| RR-14 | N | BVA | Phone 9 digits `987654321` | Rejected |"
+  },
+  {
+    "id": "RR-15",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Phone 10 digits `9876543210`",
+    "expected": "Accepted",
+    "raw": "| RR-15 | P | BVA | Phone 10 digits `9876543210` | Accepted |"
+  },
+  {
+    "id": "RR-16",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Phone 11 digits",
+    "expected": "Rejected/blocked",
+    "raw": "| RR-16 | N | BVA | Phone 11 digits | Rejected/blocked |"
+  },
+  {
+    "id": "RR-17",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Phone starting `5` (`5876543210`)",
+    "expected": "Rejected (first digit 6–9)",
+    "raw": "| RR-17 | N | BVA | Phone starting `5` (`5876543210`) | Rejected (first digit 6–9) |"
+  },
+  {
+    "id": "RR-18",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Phone starting `6` (`6876543210`)",
+    "expected": "Accepted",
+    "raw": "| RR-18 | P | BVA | Phone starting `6` (`6876543210`) | Accepted |"
+  },
+  {
+    "id": "RR-19",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Phone `98765abcde`, `98765 4321`, `+919876543210`",
+    "expected": "Rejected",
+    "raw": "| RR-19 | N | EP-I | Phone `98765abcde`, `98765 4321`, `+919876543210` | Rejected |"
+  },
+  {
+    "id": "RR-20",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Phone empty",
+    "expected": "Rejected",
+    "raw": "| RR-20 | N | EP-I | Phone empty | Rejected |"
+  },
+  {
+    "id": "RR-21",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Phone already used by another user",
+    "expected": "Rejected \"already registered\"; no duplicate row",
+    "raw": "| RR-21 | N | EP-I | Phone already used by another user | Rejected \"already registered\"; no duplicate row |"
+  },
+  {
+    "id": "RR-22",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Password length 5",
+    "expected": "Rejected",
+    "raw": "| RR-22 | N | BVA | Password length 5 | Rejected |"
+  },
+  {
+    "id": "RR-23",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Password length 6",
+    "expected": "Accepted",
+    "raw": "| RR-23 | P | BVA | Password length 6 | Accepted |"
+  },
+  {
+    "id": "RR-24",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Password length 7",
+    "expected": "Accepted",
+    "raw": "| RR-24 | P | BVA | Password length 7 | Accepted |"
+  },
+  {
+    "id": "RR-25",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Password length 31 / 32",
+    "expected": "Accepted",
+    "raw": "| RR-25 | P | BVA | Password length 31 / 32 | Accepted |"
+  },
+  {
+    "id": "RR-26",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Password length 33",
+    "expected": "Rejected/blocked",
+    "raw": "| RR-26 | N | BVA | Password length 33 | Rejected/blocked |"
+  },
+  {
+    "id": "RR-27",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Password empty",
+    "expected": "Rejected",
+    "raw": "| RR-27 | N | EP-I | Password empty | Rejected |"
+  },
+  {
+    "id": "RR-28",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Flat selector lists",
+    "expected": "Exactly 28 options 101–704",
+    "raw": "| RR-28 | P | EP-V | Flat selector lists | Exactly 28 options 101–704 |"
+  },
+  {
+    "id": "RR-29",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Flats `101`, `104`, `201`, `404`, `701`, `704` (floor/society edges)",
+    "expected": "Each accepted",
+    "raw": "| RR-29 | P | BVA | Flats `101`, `104`, `201`, `404`, `701`, `704` (floor/society edges) | Each accepted |"
+  },
+  {
+    "id": "RR-30",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Flats `100`, `105`, `001`, `705`, `801`, `0`, `1000` (via API/tampering)",
+    "expected": "Each rejected by validation **and** DB constraint",
+    "raw": "| RR-30 | N | BVA | Flats `100`, `105`, `001`, `705`, `801`, `0`, `1000` (via API/tampering) | Each rejected by validation **and** DB constraint |"
+  },
+  {
+    "id": "RR-31",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Flat `1O1` (letter O), empty, `-101`",
+    "expected": "Rejected",
+    "raw": "| RR-31 | N | EP-I | Flat `1O1` (letter O), empty, `-101` | Rejected |"
+  },
+  {
+    "id": "RR-32",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "No flat selected",
+    "expected": "Blocked \"Select your flat\"",
+    "raw": "| RR-32 | N | EP-I | No flat selected | Blocked \"Select your flat\" |"
+  },
+  {
+    "id": "RR-33",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Second resident for occupied flat 101",
+    "expected": "Accepted as pending (family); still needs approval",
+    "raw": "| RR-33 | P | EP-V | Second resident for occupied flat 101 | Accepted as pending (family); still needs approval |"
+  },
+  {
+    "id": "RR-34",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Double-tap Register",
+    "expected": "One request only",
+    "raw": "| RR-34 | N | EP-I | Double-tap Register | One request only |"
+  },
+  {
+    "id": "RR-35",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Inspect DB row",
+    "expected": "Password hashed (no plaintext)",
+    "raw": "| RR-35 | N | SEC | Inspect DB row | Password hashed (no plaintext) |"
+  },
+  {
+    "id": "RR-36",
+    "section": "9. Resident registration – **[fresh]** per case group",
+    "type": "P",
+    "tech": "UI",
+    "steps": "360px width",
+    "expected": "Fields aligned; Submit visible with keyboard open; buttons per P13",
+    "raw": "| RR-36 | P | UI | 360px width | Fields aligned; Submit visible with keyboard open; buttons per P13 |"
+  },
+  {
+    "id": "GR-01",
+    "section": "10. Guard registration",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Valid details + current 8-char code",
+    "expected": "Pending request; visible to Admin",
+    "raw": "| GR-01 | P | EP-V | Valid details + current 8-char code | Pending request; visible to Admin |"
+  },
+  {
+    "id": "GR-02",
+    "section": "10. Guard registration",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Code in lowercase",
+    "expected": "Accepted (case-insensitive)",
+    "raw": "| GR-02 | P | EP-V | Code in lowercase | Accepted (case-insensitive) |"
+  },
+  {
+    "id": "GR-03",
+    "section": "10. Guard registration",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Code with leading/trailing spaces",
+    "expected": "Trimmed; accepted",
+    "raw": "| GR-03 | P | EP-V | Code with leading/trailing spaces | Trimmed; accepted |"
+  },
+  {
+    "id": "GR-04",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Code 7 chars",
+    "expected": "Rejected",
+    "raw": "| GR-04 | N | BVA | Code 7 chars | Rejected |"
+  },
+  {
+    "id": "GR-05",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Code 9 chars",
+    "expected": "Rejected",
+    "raw": "| GR-05 | N | BVA | Code 9 chars | Rejected |"
+  },
+  {
+    "id": "GR-06",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Code empty",
+    "expected": "Rejected",
+    "raw": "| GR-06 | N | BVA | Code empty | Rejected |"
+  },
+  {
+    "id": "GR-07",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Wrong 8-char code",
+    "expected": "Rejected \"Invalid invite code\"; no record",
+    "raw": "| GR-07 | N | EP-I | Wrong 8-char code | Rejected \"Invalid invite code\"; no record |"
+  },
+  {
+    "id": "GR-08",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Code with symbol `ABCD-123`",
+    "expected": "Rejected",
+    "raw": "| GR-08 | N | EP-I | Code with symbol `ABCD-123` | Rejected |"
+  },
+  {
+    "id": "GR-09",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Pending guard logs in",
+    "expected": "Pending screen; no console",
+    "raw": "| GR-09 | N | ST | Pending guard logs in | Pending screen; no console |"
+  },
+  {
+    "id": "GR-10",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Guard updates own status to approved via API",
+    "expected": "Denied",
+    "raw": "| GR-10 | N | SEC | Guard updates own status to approved via API | Denied |"
+  },
+  {
+    "id": "GR-11",
+    "section": "10. Guard registration",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Guard name/phone/password",
+    "expected": "Same boundaries as RR-02..RR-27 apply (run subset: name 1/2/50/51, phone 9/10/11, password 5/6/32/33)",
+    "raw": "| GR-11 | N | BVA | Guard name/phone/password | Same boundaries as RR-02..RR-27 apply (run subset: name 1/2/50/51, phone 9/10/11, password 5/6/32/33) |"
+  },
+  {
+    "id": "IC-01",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Guard logs Guest `Rahul Mehta` for 101 and taps Ring",
+    "expected": "RES_A sees ring overlay instantly with chime; shows name, category, time",
+    "raw": "| IC-01 | P | EP-V | Guard logs Guest `Rahul Mehta` for 101 and taps Ring | RES_A sees ring overlay instantly with chime; shows name, category, time |"
+  },
+  {
+    "id": "IC-02",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "P",
+    "tech": "ST",
+    "steps": "RES_A taps Approve",
+    "expected": "Guard console shows Approved; chime stops",
+    "raw": "| IC-02 | P | ST | RES_A taps Approve | Guard console shows Approved; chime stops |"
+  },
+  {
+    "id": "IC-03",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "P",
+    "tech": "ST",
+    "steps": "RES_A taps Reject",
+    "expected": "Guard sees Rejected; entry not allowed; error tone on guard side",
+    "raw": "| IC-03 | P | ST | RES_A taps Reject | Guard sees Rejected; entry not allowed; error tone on guard side |"
+  },
+  {
+    "id": "IC-04",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Guard rings 101",
+    "expected": "RES_B (204) receives nothing",
+    "raw": "| IC-04 | N | SEC | Guard rings 101 | RES_B (204) receives nothing |"
+  },
+  {
+    "id": "IC-05",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "RES_A logged out; guard rings 101",
+    "expected": "Guard sees \"unavailable/no response\"; visitor stays Pending until timeout",
+    "raw": "| IC-05 | N | EP-I | RES_A logged out; guard rings 101 | Guard sees \"unavailable/no response\"; visitor stays Pending until timeout |"
+  },
+  {
+    "id": "IC-06",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "No response for 59 s",
+    "expected": "Still ringing/Pending",
+    "raw": "| IC-06 | N | BVA | No response for 59 s | Still ringing/Pending |"
+  },
+  {
+    "id": "IC-07",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "No response for 60 s",
+    "expected": "Ring ends; status \"No response\"; chime stops",
+    "raw": "| IC-07 | N | BVA | No response for 60 s | Ring ends; status \"No response\"; chime stops |"
+  },
+  {
+    "id": "IC-08",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Response at 61 s (after timeout)",
+    "expected": "Rejected as expired; status unchanged",
+    "raw": "| IC-08 | N | BVA | Response at 61 s (after timeout) | Rejected as expired; status unchanged |"
+  },
+  {
+    "id": "IC-09",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Guard taps \"Allow entry\" while status Pending",
+    "expected": "Not possible/blocked; approval required",
+    "raw": "| IC-09 | N | ST | Guard taps \"Allow entry\" while status Pending | Not possible/blocked; approval required |"
+  },
+  {
+    "id": "IC-10",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Guard taps \"Allow entry\" after Rejected",
+    "expected": "Blocked",
+    "raw": "| IC-10 | N | ST | Guard taps \"Allow entry\" after Rejected | Blocked |"
+  },
+  {
+    "id": "IC-11",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Guard rings vacant flat (no approved resident)",
+    "expected": "Warning \"No resident registered\"; no ring",
+    "raw": "| IC-11 | N | EP-I | Guard rings vacant flat (no approved resident) | Warning \"No resident registered\"; no ring |"
+  },
+  {
+    "id": "IC-12",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Two visitors for 101 rung 1 s apart",
+    "expected": "Both queued; each decision applies to the correct visitor",
+    "raw": "| IC-12 | P | BVA | Two visitors for 101 rung 1 s apart | Both queued; each decision applies to the correct visitor |"
+  },
+  {
+    "id": "IC-13",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "RES_A double-taps Approve",
+    "expected": "One decision recorded",
+    "raw": "| IC-13 | N | EP-I | RES_A double-taps Approve | One decision recorded |"
+  },
+  {
+    "id": "IC-14",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Ring overlay at 375×812",
+    "expected": "Approve/Reject ≥44px tall; not hidden behind nav",
+    "raw": "| IC-14 | P | UI | Ring overlay at 375×812 | Approve/Reject ≥44px tall; not hidden behind nav |"
+  },
+  {
+    "id": "IC-15",
+    "section": "11. Doorbell intercom – Depends: BOOT (RES_A flat 101 and RES_B flat 204 logged in, GUARD_1 logged in, separate sessions)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Resident tab in background when ring arrives **[manual]**",
+    "expected": "Chime/notification delivered once (no duplicates)",
+    "raw": "| IC-15 | P | EP-V | Resident tab in background when ring arrives **[manual]** | Chime/notification delivered once (no duplicates) |"
+  },
+  {
+    "id": "PA-01",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Name `Rahul Mehta`, start = now, duration 1 h, Generate",
+    "expected": "6-digit OTP + QR; listed under Active",
+    "raw": "| PA-01 | P | EP-V | Name `Rahul Mehta`, start = now, duration 1 h, Generate | 6-digit OTP + QR; listed under Active |"
+  },
+  {
+    "id": "PA-02",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Generate 20 passes",
+    "expected": "All OTPs are 6-digit numeric; leading zeros retained; no duplicates among active",
+    "raw": "| PA-02 | P | EP-V | Generate 20 passes | All OTPs are 6-digit numeric; leading zeros retained; no duplicates among active |"
+  },
+  {
+    "id": "PA-03",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Visitor name length 0 / 1",
+    "expected": "Rejected",
+    "raw": "| PA-03 | N | BVA | Visitor name length 0 / 1 | Rejected |"
+  },
+  {
+    "id": "PA-04",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Name length 2 / 50",
+    "expected": "Accepted",
+    "raw": "| PA-04 | P | BVA | Name length 2 / 50 | Accepted |"
+  },
+  {
+    "id": "PA-05",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Name length 51",
+    "expected": "Rejected/blocked",
+    "raw": "| PA-05 | N | BVA | Name length 51 | Rejected/blocked |"
+  },
+  {
+    "id": "PA-06",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Name `<b>x</b>`; emoji only",
+    "expected": "Stored/displayed as text; emoji-only rejected",
+    "raw": "| PA-06 | N | EP-I | Name `<b>x</b>`; emoji only | Stored/displayed as text; emoji-only rejected |"
+  },
+  {
+    "id": "PA-07",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Duration 14 min",
+    "expected": "Rejected",
+    "raw": "| PA-07 | N | BVA | Duration 14 min | Rejected |"
+  },
+  {
+    "id": "PA-08",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Duration 15 min",
+    "expected": "Accepted",
+    "raw": "| PA-08 | P | BVA | Duration 15 min | Accepted |"
+  },
+  {
+    "id": "PA-09",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Duration 16 min",
+    "expected": "Accepted",
+    "raw": "| PA-09 | P | BVA | Duration 16 min | Accepted |"
+  },
+  {
+    "id": "PA-10",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Duration 24 h",
+    "expected": "Accepted",
+    "raw": "| PA-10 | P | BVA | Duration 24 h | Accepted |"
+  },
+  {
+    "id": "PA-11",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Duration 24 h 1 min",
+    "expected": "Rejected",
+    "raw": "| PA-11 | N | BVA | Duration 24 h 1 min | Rejected |"
+  },
+  {
+    "id": "PA-12",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Start time 1 minute in the past",
+    "expected": "Rejected",
+    "raw": "| PA-12 | N | BVA | Start time 1 minute in the past | Rejected |"
+  },
+  {
+    "id": "PA-13",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "End before start",
+    "expected": "Rejected",
+    "raw": "| PA-13 | N | EP-I | End before start | Rejected |"
+  },
+  {
+    "id": "PA-14",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "9 active passes → generate 10th",
+    "expected": "Accepted",
+    "raw": "| PA-14 | P | BVA | 9 active passes → generate 10th | Accepted |"
+  },
+  {
+    "id": "PA-15",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "10 active passes → generate 11th",
+    "expected": "Rejected \"limit reached\"",
+    "raw": "| PA-15 | N | BVA | 10 active passes → generate 11th | Rejected \"limit reached\" |"
+  },
+  {
+    "id": "PA-16",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Scan QR with guard scanner or QR reader",
+    "expected": "Payload resolves to this pass (visitor, flat 101, OTP/token)",
+    "raw": "| PA-16 | P | EP-V | Scan QR with guard scanner or QR reader | Payload resolves to this pass (visitor, flat 101, OTP/token) |"
+  },
+  {
+    "id": "PA-17",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Tap Share **[manual]**",
+    "expected": "WhatsApp share opens with text, OTP and QR image",
+    "raw": "| PA-17 | P | EP-V | Tap Share **[manual]** | WhatsApp share opens with text, OTP and QR image |"
+  },
+  {
+    "id": "PA-18",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Share when WhatsApp unavailable **[manual]**",
+    "expected": "Fallback (system share/copy); no crash",
+    "raw": "| PA-18 | N | EP-I | Share when WhatsApp unavailable **[manual]** | Fallback (system share/copy); no crash |"
+  },
+  {
+    "id": "PA-19",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Revoke active pass → Confirm",
+    "expected": "Status Revoked; gate verification fails",
+    "raw": "| PA-19 | P | ST | Revoke active pass → Confirm | Status Revoked; gate verification fails |"
+  },
+  {
+    "id": "PA-20",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Revoke → Cancel",
+    "expected": "Stays Active",
+    "raw": "| PA-20 | N | ST | Revoke → Cancel | Stays Active |"
+  },
+  {
+    "id": "PA-21",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "No passes yet",
+    "expected": "Empty state with icon/prompt",
+    "raw": "| PA-21 | P | UI | No passes yet | Empty state with icon/prompt |"
+  },
+  {
+    "id": "PA-22",
+    "section": "12. Pre-approved visitor (OTP + QR) – Depends: BOOT (RES_A)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "QR in dark and light theme",
+    "expected": "High contrast; scannable; not clipped",
+    "raw": "| PA-22 | P | UI | QR in dark and light theme | High contrast; scannable; not clipped |"
+  },
+  {
+    "id": "DP-01",
+    "section": "13. Delivery preference – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Default value on new resident",
+    "expected": "\"Ask for approval\" selected",
+    "raw": "| DP-01 | P | EP-V | Default value on new resident | \"Ask for approval\" selected |"
+  },
+  {
+    "id": "DP-02",
+    "section": "13. Delivery preference – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Set \"Leave at security gate\"; log out/in",
+    "expected": "Persisted",
+    "raw": "| DP-02 | P | EP-V | Set \"Leave at security gate\"; log out/in | Persisted |"
+  },
+  {
+    "id": "DP-03",
+    "section": "13. Delivery preference – Depends: BOOT",
+    "type": "P",
+    "tech": "DT",
+    "steps": "Decision table: pref {Ask, Leave} × category {Delivery, Guest, Cab, Service}",
+    "expected": "Only (Leave, Delivery) skips the ring and logs \"Left at gate\"; the other 7 combinations ring the resident",
+    "raw": "| DP-03 | P | DT | Decision table: pref {Ask, Leave} × category {Delivery, Guest, Cab, Service} | Only (Leave, Delivery) skips the ring and logs \"Left at gate\"; the other 7 combinations ring the resident |"
+  },
+  {
+    "id": "DP-04",
+    "section": "13. Delivery preference – Depends: BOOT",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "RES_A sets Leave; guard logs Delivery to 204",
+    "expected": "RES_B behaviour unchanged (rings)",
+    "raw": "| DP-04 | N | SEC | RES_A sets Leave; guard logs Delivery to 204 | RES_B behaviour unchanged (rings) |"
+  },
+  {
+    "id": "DP-05",
+    "section": "13. Delivery preference – Depends: BOOT",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Toggle",
+    "expected": "Selected state obvious; target ≥44px",
+    "raw": "| DP-05 | P | UI | Toggle | Selected state obvious; target ≥44px |"
+  },
+  {
+    "id": "SO-01",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Tap SOS → Confirm",
+    "expected": "Alert to guards and admin with flat 101 and time; alert tone",
+    "raw": "| SO-01 | P | EP-V | Tap SOS → Confirm | Alert to guards and admin with flat 101 and time; alert tone |"
+  },
+  {
+    "id": "SO-02",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Tap SOS → Cancel",
+    "expected": "No alert",
+    "raw": "| SO-02 | N | EP-I | Tap SOS → Cancel | No alert |"
+  },
+  {
+    "id": "SO-03",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Guard acknowledges",
+    "expected": "Status Acknowledged; incident logged",
+    "raw": "| SO-03 | P | ST | Guard acknowledges | Status Acknowledged; incident logged |"
+  },
+  {
+    "id": "SO-04",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Second SOS at 59 s",
+    "expected": "Ignored; message \"already sent\"",
+    "raw": "| SO-04 | N | BVA | Second SOS at 59 s | Ignored; message \"already sent\" |"
+  },
+  {
+    "id": "SO-05",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Second SOS at 60 s",
+    "expected": "Accepted",
+    "raw": "| SO-05 | P | BVA | Second SOS at 60 s | Accepted |"
+  },
+  {
+    "id": "SO-06",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "SOS at 61 s",
+    "expected": "Accepted",
+    "raw": "| SO-06 | P | BVA | SOS at 61 s | Accepted |"
+  },
+  {
+    "id": "SO-07",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Offline SOS **[manual]**",
+    "expected": "User told it failed with retry/call fallback",
+    "raw": "| SO-07 | N | EP-I | Offline SOS **[manual]** | User told it failed with retry/call fallback |"
+  },
+  {
+    "id": "SO-08",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Logged out; call SOS API",
+    "expected": "Denied",
+    "raw": "| SO-08 | N | SEC | Logged out; call SOS API | Denied |"
+  },
+  {
+    "id": "SO-09",
+    "section": "14. Resident SOS – Depends: BOOT (guard console open)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Resident home",
+    "expected": "SOS distinct, reachable, not near logout/profile actions",
+    "raw": "| SO-09 | P | UI | Resident home | SOS distinct, reachable, not near logout/profile actions |"
+  },
+  {
+    "id": "RH-01",
+    "section": "15. Resident notices and visitor history – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Admin publishes notice; resident opens list",
+    "expected": "Visible; urgent highlighted; arrives without reload",
+    "raw": "| RH-01 | P | EP-V | Admin publishes notice; resident opens list | Visible; urgent highlighted; arrives without reload |"
+  },
+  {
+    "id": "RH-02",
+    "section": "15. Resident notices and visitor history – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "0 notices / 1 notice / 50 notices",
+    "expected": "Empty state / single card / scrollable list",
+    "raw": "| RH-02 | P | BVA | 0 notices / 1 notice / 50 notices | Empty state / single card / scrollable list |"
+  },
+  {
+    "id": "RH-03",
+    "section": "15. Resident notices and visitor history – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "0 visits / 1 visit / many visits in history",
+    "expected": "Empty state / one item / paginated or scrollable",
+    "raw": "| RH-03 | P | BVA | 0 visits / 1 visit / many visits in history | Empty state / one item / paginated or scrollable |"
+  },
+  {
+    "id": "RH-04",
+    "section": "15. Resident notices and visitor history – Depends: BOOT",
+    "type": "P",
+    "tech": "SEC",
+    "steps": "Visits exist for 101 and 204; log in as RES_A",
+    "expected": "Only 101 visits shown",
+    "raw": "| RH-04 | P | SEC | Visits exist for 101 and 204; log in as RES_A | Only 101 visits shown |"
+  },
+  {
+    "id": "RH-05",
+    "section": "15. Resident notices and visitor history – Depends: BOOT",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Query visitors with flat_id 204 as RES_A",
+    "expected": "0 rows",
+    "raw": "| RH-05 | N | SEC | Query visitors with flat_id 204 as RES_A | 0 rows |"
+  },
+  {
+    "id": "RH-06",
+    "section": "15. Resident notices and visitor history – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Open a history item",
+    "expected": "Name, category, in/out times, decision by shown",
+    "raw": "| RH-06 | P | EP-V | Open a history item | Name, category, in/out times, decision by shown |"
+  },
+  {
+    "id": "GW-01",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Open selector",
+    "expected": "7 floor rows × 4 flats 101–704; target ≥44px; one-hand reachable",
+    "raw": "| GW-01 | P | UI | Open selector | 7 floor rows × 4 flats 101–704; target ≥44px; one-hand reachable |"
+  },
+  {
+    "id": "GW-02",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Select flat 101, 104, 401, 704 in turn",
+    "expected": "Only the latest is highlighted; correct flat passed on submit",
+    "raw": "| GW-02 | P | BVA | Select flat 101, 104, 401, 704 in turn | Only the latest is highlighted; correct flat passed on submit |"
+  },
+  {
+    "id": "GW-03",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Flat 203, name `Rahul Mehta`, chip Guest, Ring",
+    "expected": "Visitor Pending; RES (203) rung",
+    "raw": "| GW-03 | P | EP-V | Flat 203, name `Rahul Mehta`, chip Guest, Ring | Visitor Pending; RES (203) rung |"
+  },
+  {
+    "id": "GW-04",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Repeat with chips Delivery, Cab, Service",
+    "expected": "Each stored with correct category; only one chip selectable at a time",
+    "raw": "| GW-04 | P | EP-V | Repeat with chips Delivery, Cab, Service | Each stored with correct category; only one chip selectable at a time |"
+  },
+  {
+    "id": "GW-05",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "No category chip",
+    "expected": "Blocked with message",
+    "raw": "| GW-05 | N | EP-I | No category chip | Blocked with message |"
+  },
+  {
+    "id": "GW-06",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "No flat selected",
+    "expected": "Blocked; error buzzer",
+    "raw": "| GW-06 | N | EP-I | No flat selected | Blocked; error buzzer |"
+  },
+  {
+    "id": "GW-07",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Name length 0 / 1",
+    "expected": "Rejected",
+    "raw": "| GW-07 | N | BVA | Name length 0 / 1 | Rejected |"
+  },
+  {
+    "id": "GW-08",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Name length 2 / 50",
+    "expected": "Accepted",
+    "raw": "| GW-08 | P | BVA | Name length 2 / 50 | Accepted |"
+  },
+  {
+    "id": "GW-09",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Name length 51",
+    "expected": "Rejected/blocked",
+    "raw": "| GW-09 | N | BVA | Name length 51 | Rejected/blocked |"
+  },
+  {
+    "id": "GW-10",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Vehicle no. length 0 (optional) / 15",
+    "expected": "Accepted",
+    "raw": "| GW-10 | P | BVA | Vehicle no. length 0 (optional) / 15 | Accepted |"
+  },
+  {
+    "id": "GW-11",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Vehicle no. length 16; symbols `MH-12#`",
+    "expected": "Rejected",
+    "raw": "| GW-11 | N | BVA | Vehicle no. length 16; symbols `MH-12#` | Rejected |"
+  },
+  {
+    "id": "GW-12",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Double-tap Ring",
+    "expected": "One visitor record",
+    "raw": "| GW-12 | N | EP-I | Double-tap Ring | One visitor record |"
+  },
+  {
+    "id": "GW-13",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "DT",
+    "steps": "Delivery to flat with pref Leave at gate",
+    "expected": "No ring; logged \"Left at gate\"",
+    "raw": "| GW-13 | P | DT | Delivery to flat with pref Leave at gate | No ring; logged \"Left at gate\" |"
+  },
+  {
+    "id": "GW-14",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Dark mode",
+    "expected": "Contrast ≥ 4.5:1 for text/controls; no white flash",
+    "raw": "| GW-14 | P | UI | Dark mode | Contrast ≥ 4.5:1 for text/controls; no white flash |"
+  },
+  {
+    "id": "GW-15",
+    "section": "16. Guard walk-in logger – Depends: BOOT (GUARD_1)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Attempt entry for Pending visitor (UI and API)",
+    "expected": "Blocked",
+    "raw": "| GW-15 | N | ST | Attempt entry for Pending visitor (UI and API) | Blocked |"
+  },
+  {
+    "id": "GV-01",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Enter correct 6-digit OTP, Verify",
+    "expected": "Success shows visitor name + flat; barrier sound; appears Inside Campus",
+    "raw": "| GV-01 | P | EP-V | Enter correct 6-digit OTP, Verify | Success shows visitor name + flat; barrier sound; appears Inside Campus |"
+  },
+  {
+    "id": "GV-02",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "OTP 0 / 1 / 5 digits",
+    "expected": "Verify disabled or error",
+    "raw": "| GV-02 | N | BVA | OTP 0 / 1 / 5 digits | Verify disabled or error |"
+  },
+  {
+    "id": "GV-03",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "OTP 7 digits",
+    "expected": "Input capped at 6 or rejected",
+    "raw": "| GV-03 | N | BVA | OTP 7 digits | Input capped at 6 or rejected |"
+  },
+  {
+    "id": "GV-04",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "OTP `000000` and `999999` (unassigned)",
+    "expected": "\"Invalid OTP\"; buzzer",
+    "raw": "| GV-04 | N | BVA | OTP `000000` and `999999` (unassigned) | \"Invalid OTP\"; buzzer |"
+  },
+  {
+    "id": "GV-05",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "OTP = correct −1 and +1",
+    "expected": "Invalid",
+    "raw": "| GV-05 | N | BVA | OTP = correct −1 and +1 | Invalid |"
+  },
+  {
+    "id": "GV-06",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Pass whose OTP has leading zero (e.g. `004512`)",
+    "expected": "Verifies correctly (not truncated)",
+    "raw": "| GV-06 | P | BVA | Pass whose OTP has leading zero (e.g. `004512`) | Verifies correctly (not truncated) |"
+  },
+  {
+    "id": "GV-07",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Non-numeric `12a456`",
+    "expected": "Blocked",
+    "raw": "| GV-07 | N | EP-I | Non-numeric `12a456` | Blocked |"
+  },
+  {
+    "id": "GV-08",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Verify at expiry −1 s",
+    "expected": "Success",
+    "raw": "| GV-08 | N | BVA | Verify at expiry −1 s | Success |"
+  },
+  {
+    "id": "GV-09",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Verify at expiry exactly",
+    "expected": "Per boundary rule: **rejected as expired**",
+    "raw": "| GV-09 | N | BVA | Verify at expiry exactly | Per boundary rule: **rejected as expired** |"
+  },
+  {
+    "id": "GV-10",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Verify at expiry +1 s",
+    "expected": "Rejected as expired",
+    "raw": "| GV-10 | N | BVA | Verify at expiry +1 s | Rejected as expired |"
+  },
+  {
+    "id": "GV-11",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Verify same OTP twice",
+    "expected": "Second attempt rejected (single-use)",
+    "raw": "| GV-11 | N | ST | Verify same OTP twice | Second attempt rejected (single-use) |"
+  },
+  {
+    "id": "GV-12",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Verify revoked pass",
+    "expected": "Rejected",
+    "raw": "| GV-12 | N | ST | Verify revoked pass | Rejected |"
+  },
+  {
+    "id": "GV-13",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "20 wrong OTPs in a row",
+    "expected": "Throttle/lockout after 5 failures (same as P2)",
+    "raw": "| GV-13 | N | SEC | 20 wrong OTPs in a row | Throttle/lockout after 5 failures (same as P2) |"
+  },
+  {
+    "id": "GV-14",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Scan valid QR",
+    "expected": "Laser animation; success; logged Inside",
+    "raw": "| GV-14 | P | EP-V | Scan valid QR | Laser animation; success; logged Inside |"
+  },
+  {
+    "id": "GV-15",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Scan tampered/random QR",
+    "expected": "Rejected; error buzzer",
+    "raw": "| GV-15 | N | SEC | Scan tampered/random QR | Rejected; error buzzer |"
+  },
+  {
+    "id": "GV-16",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Camera permission denied **[manual]**",
+    "expected": "Message + fallback to manual OTP",
+    "raw": "| GV-16 | N | EP-I | Camera permission denied **[manual]** | Message + fallback to manual OTP |"
+  },
+  {
+    "id": "GV-17",
+    "section": "17. Guard pre-approval verifier – Depends: active pass PA-01 (OTP known)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Keypad taps",
+    "expected": "Click sound per key; backspace works; targets ≥48dp",
+    "raw": "| GV-17 | P | UI | Keypad taps | Click sound per key; backspace works; targets ≥48dp |"
+  },
+  {
+    "id": "GI-01",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "0 visitors inside",
+    "expected": "Empty state icon/prompt",
+    "raw": "| GI-01 | P | BVA | 0 visitors inside | Empty state icon/prompt |"
+  },
+  {
+    "id": "GI-02",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "1 approved visitor entered",
+    "expected": "Listed with name, flat, category, entry time",
+    "raw": "| GI-02 | P | BVA | 1 approved visitor entered | Listed with name, flat, category, entry time |"
+  },
+  {
+    "id": "GI-03",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "50 visitors inside",
+    "expected": "Scrolls; Exit buttons not covered by nav",
+    "raw": "| GI-03 | P | BVA | 50 visitors inside | Scrolls; Exit buttons not covered by nav |"
+  },
+  {
+    "id": "GI-04",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Tap Exit",
+    "expected": "Removed; exit time stored; admin count −1",
+    "raw": "| GI-04 | P | ST | Tap Exit | Removed; exit time stored; admin count −1 |"
+  },
+  {
+    "id": "GI-05",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Double-tap Exit",
+    "expected": "One exit event",
+    "raw": "| GI-05 | N | ST | Double-tap Exit | One exit event |"
+  },
+  {
+    "id": "GI-06",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Rejected, No-response, Pending visitors",
+    "expected": "Not listed as Inside",
+    "raw": "| GI-06 | N | ST | Rejected, No-response, Pending visitors | Not listed as Inside |"
+  },
+  {
+    "id": "GI-07",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "OTP-verified visitor",
+    "expected": "Listed with \"pre-approved\" tag",
+    "raw": "| GI-07 | P | EP-V | OTP-verified visitor | Listed with \"pre-approved\" tag |"
+  },
+  {
+    "id": "GI-08",
+    "section": "18. Inside campus tracker and checkout – Depends: BOOT",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Two guards Exit same visitor",
+    "expected": "Second gets \"already exited\"",
+    "raw": "| GI-08 | N | ST | Two guards Exit same visitor | Second gets \"already exited\" |"
+  },
+  {
+    "id": "GS-01",
+    "section": "19. Guard incident logger",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Note `Suspicious person at gate`, Save",
+    "expected": "Stored with timestamp and guard id",
+    "raw": "| GS-01 | P | EP-V | Note `Suspicious person at gate`, Save | Stored with timestamp and guard id |"
+  },
+  {
+    "id": "GS-02",
+    "section": "19. Guard incident logger",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Note length 0",
+    "expected": "Rejected",
+    "raw": "| GS-02 | N | BVA | Note length 0 | Rejected |"
+  },
+  {
+    "id": "GS-03",
+    "section": "19. Guard incident logger",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Note length 1 / 500",
+    "expected": "Accepted",
+    "raw": "| GS-03 | P | BVA | Note length 1 / 500 | Accepted |"
+  },
+  {
+    "id": "GS-04",
+    "section": "19. Guard incident logger",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Note length 501",
+    "expected": "Rejected/blocked",
+    "raw": "| GS-04 | N | BVA | Note length 501 | Rejected/blocked |"
+  },
+  {
+    "id": "GS-05",
+    "section": "19. Guard incident logger",
+    "type": "P",
+    "tech": "UI",
+    "steps": "No incidents",
+    "expected": "Empty state",
+    "raw": "| GS-05 | P | UI | No incidents | Empty state |"
+  },
+  {
+    "id": "GS-06",
+    "section": "19. Guard incident logger",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Resident reads incident log via API",
+    "expected": "Denied",
+    "raw": "| GS-06 | N | SEC | Resident reads incident log via API | Denied |"
+  },
+  {
+    "id": "VS-01",
+    "section": "20. Visitor state machine (ST)",
+    "type": "P",
+    "tech": "Pending → Approved",
+    "steps": "Allowed (resident)",
+    "raw": "| VS-01 | P | Pending → Approved | Allowed (resident) |"
+  },
+  {
+    "id": "VS-02",
+    "section": "20. Visitor state machine (ST)",
+    "type": "P",
+    "tech": "Approved → Inside",
+    "steps": "Allowed (guard)",
+    "raw": "| VS-02 | P | Approved → Inside | Allowed (guard) |"
+  },
+  {
+    "id": "VS-03",
+    "section": "20. Visitor state machine (ST)",
+    "type": "P",
+    "tech": "Inside → Exited",
+    "steps": "Allowed (guard)",
+    "raw": "| VS-03 | P | Inside → Exited | Allowed (guard) |"
+  },
+  {
+    "id": "VS-04",
+    "section": "20. Visitor state machine (ST)",
+    "type": "P",
+    "tech": "Pending → Rejected",
+    "steps": "Allowed (resident)",
+    "raw": "| VS-04 | P | Pending → Rejected | Allowed (resident) |"
+  },
+  {
+    "id": "VS-05",
+    "section": "20. Visitor state machine (ST)",
+    "type": "P",
+    "tech": "Pending → No response",
+    "steps": "Automatic at 60 s",
+    "raw": "| VS-05 | P | Pending → No response | Automatic at 60 s |"
+  },
+  {
+    "id": "VS-06",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "Pending → Inside",
+    "steps": "Blocked",
+    "raw": "| VS-06 | N | Pending → Inside | Blocked |"
+  },
+  {
+    "id": "VS-07",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "Rejected → Inside",
+    "steps": "Blocked",
+    "raw": "| VS-07 | N | Rejected → Inside | Blocked |"
+  },
+  {
+    "id": "VS-08",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "No response → Inside",
+    "steps": "Blocked",
+    "raw": "| VS-08 | N | No response → Inside | Blocked |"
+  },
+  {
+    "id": "VS-09",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "Exited → Inside",
+    "steps": "Blocked",
+    "raw": "| VS-09 | N | Exited → Inside | Blocked |"
+  },
+  {
+    "id": "VS-10",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "Exited → Exited",
+    "steps": "Blocked",
+    "raw": "| VS-10 | N | Exited → Exited | Blocked |"
+  },
+  {
+    "id": "VS-11",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "Guard sets Approved",
+    "steps": "Blocked (only resident)",
+    "raw": "| VS-11 | N | Guard sets Approved | Blocked (only resident) |"
+  },
+  {
+    "id": "VS-12",
+    "section": "20. Visitor state machine (ST)",
+    "type": "P",
+    "tech": "Pass: Active → Used / Expired / Revoked",
+    "steps": "Each allowed",
+    "raw": "| VS-12 | P | Pass: Active → Used / Expired / Revoked | Each allowed |"
+  },
+  {
+    "id": "VS-13",
+    "section": "20. Visitor state machine (ST)",
+    "type": "N",
+    "tech": "Pass: Used → Active; Expired → Active; Revoked → Used",
+    "steps": "Blocked",
+    "raw": "| VS-13 | N | Pass: Used → Active; Expired → Active; Revoked → Used | Blocked |"
+  },
+  {
+    "id": "DS-01",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Computed style of all buttons on every screen, all roles",
+    "expected": "`font-weight` = 700",
+    "raw": "| DS-01 | P | UI | Computed style of all buttons on every screen, all roles | `font-weight` = 700 |"
+  },
+  {
+    "id": "DS-02",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Standard buttons height",
+    "expected": "44px (43px = FAIL)",
+    "raw": "| DS-02 | P | BVA | Standard buttons height | 44px (43px = FAIL) |"
+  },
+  {
+    "id": "DS-03",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Small buttons height",
+    "expected": "36px (35px = FAIL)",
+    "raw": "| DS-03 | P | BVA | Small buttons height | 36px (35px = FAIL) |"
+  },
+  {
+    "id": "DS-04",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Border radius",
+    "expected": "Standard 12px; small 10px",
+    "raw": "| DS-04 | P | UI | Border radius | Standard 12px; small 10px |"
+  },
+  {
+    "id": "DS-05",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Press and hold any button",
+    "expected": "Visible active/pressed state",
+    "raw": "| DS-05 | P | UI | Press and hold any button | Visible active/pressed state |"
+  },
+  {
+    "id": "DS-06",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "UI",
+    "steps": "Audit for non-system (inline-styled) buttons",
+    "expected": "None found",
+    "raw": "| DS-06 | N | UI | Audit for non-system (inline-styled) buttons | None found |"
+  },
+  {
+    "id": "DS-07",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "UI",
+    "steps": "Disabled button (e.g. empty form)",
+    "expected": "Visibly disabled; no press state; no action",
+    "raw": "| DS-07 | N | UI | Disabled button (e.g. empty form) | Visibly disabled; no press state; no action |"
+  },
+  {
+    "id": "DS-08",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Palette: Terracotta #B96D3A/#C87E4B, Sandstone #FAF7F3/#DFCAA0, Slate #161A20/#272E38, Emerald #059669",
+    "expected": "Used as specified; no off-palette primary colours",
+    "raw": "| DS-08 | P | UI | Palette: Terracotta #B96D3A/#C87E4B, Sandstone #FAF7F3/#DFCAA0, Slate #161A20/#272E38, Emerald #059669 | Used as specified; no off-palette primary colours |"
+  },
+  {
+    "id": "NV-01",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Count tabs for Admin, Resident, Guard",
+    "expected": "Each ≤ 4 (5 = FAIL)",
+    "raw": "| NV-01 | P | BVA | Count tabs for Admin, Resident, Guard | Each ≤ 4 (5 = FAIL) |"
+  },
+  {
+    "id": "NV-02",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Active tab",
+    "expected": "Filled SVG icon inside pill indicator",
+    "raw": "| NV-02 | P | UI | Active tab | Filled SVG icon inside pill indicator |"
+  },
+  {
+    "id": "NV-03",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Inactive tab",
+    "expected": "Outlined SVG icon, no pill",
+    "raw": "| NV-03 | P | UI | Inactive tab | Outlined SVG icon, no pill |"
+  },
+  {
+    "id": "NV-04",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Tab hit-area size",
+    "expected": "≥ 48×48dp (47 = FAIL)",
+    "raw": "| NV-04 | P | BVA | Tab hit-area size | ≥ 48×48dp (47 = FAIL) |"
+  },
+  {
+    "id": "NV-05",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "UI",
+    "steps": "Look for logout in bottom nav",
+    "expected": "None",
+    "raw": "| NV-05 | N | UI | Look for logout in bottom nav | None |"
+  },
+  {
+    "id": "NV-06",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Tap tabs 20× quickly",
+    "expected": "No crash/flicker; final tab content correct",
+    "raw": "| NV-06 | N | EP-I | Tap tabs 20× quickly | No crash/flicker; final tab content correct |"
+  },
+  {
+    "id": "NV-07",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Resident opens admin route/tab",
+    "expected": "Redirect; no admin tabs",
+    "raw": "| NV-07 | N | SEC | Resident opens admin route/tab | Redirect; no admin tabs |"
+  },
+  {
+    "id": "LO-01",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Search all screens, all roles, for logout controls",
+    "expected": "Exactly **one** per role, inside Profile/Account popup",
+    "raw": "| LO-01 | P | EP-V | Search all screens, all roles, for logout controls | Exactly **one** per role, inside Profile/Account popup |"
+  },
+  {
+    "id": "LO-02",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Profile → Log Out",
+    "expected": "One dialog: \"Yes, Log Out\" / \"Cancel\"",
+    "raw": "| LO-02 | P | EP-V | Profile → Log Out | One dialog: \"Yes, Log Out\" / \"Cancel\" |"
+  },
+  {
+    "id": "LO-03",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Yes, Log Out",
+    "expected": "Session/tokens cleared; login screen; Back does not restore session",
+    "raw": "| LO-03 | P | ST | Yes, Log Out | Session/tokens cleared; login screen; Back does not restore session |"
+  },
+  {
+    "id": "LO-04",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "ST",
+    "steps": "Cancel",
+    "expected": "Dialog closes; session intact; same screen",
+    "raw": "| LO-04 | N | ST | Cancel | Dialog closes; session intact; same screen |"
+  },
+  {
+    "id": "LO-05",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Tap scrim or press Back",
+    "expected": "Dialog closes; still logged in",
+    "raw": "| LO-05 | N | EP-I | Tap scrim or press Back | Dialog closes; still logged in |"
+  },
+  {
+    "id": "LO-06",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Tap Log Out repeatedly",
+    "expected": "Only one dialog",
+    "raw": "| LO-06 | N | EP-I | Tap Log Out repeatedly | Only one dialog |"
+  },
+  {
+    "id": "LO-07",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Logout button colour",
+    "expected": "Sandstone/terracotta family; not saturated red",
+    "raw": "| LO-07 | P | UI | Logout button colour | Sandstone/terracotta family; not saturated red |"
+  },
+  {
+    "id": "LO-08",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "After logout: inspect storage; visit protected URL",
+    "expected": "No tokens/user data; redirected",
+    "raw": "| LO-08 | N | SEC | After logout: inspect storage; visit protected URL | No tokens/user data; redirected |"
+  },
+  {
+    "id": "TO-01",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Toast `top`",
+    "expected": "54px; header fully visible above it",
+    "raw": "| TO-01 | P | BVA | Toast `top` | 54px; header fully visible above it |"
+  },
+  {
+    "id": "TO-02",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Toast on screens with primary CTA/nav",
+    "expected": "Does not overlap header, nav, or CTA",
+    "raw": "| TO-02 | P | UI | Toast on screens with primary CTA/nav | Does not overlap header, nav, or CTA |"
+  },
+  {
+    "id": "TO-03",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "300-char message",
+    "expected": "Wraps; no overflow or ellipsis cut",
+    "raw": "| TO-03 | P | UI | 300-char message | Wraps; no overflow or ellipsis cut |"
+  },
+  {
+    "id": "TO-04",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Check at 3.7 s",
+    "expected": "Still visible",
+    "raw": "| TO-04 | P | BVA | Check at 3.7 s | Still visible |"
+  },
+  {
+    "id": "TO-05",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Check at 4.3 s",
+    "expected": "Dismissed",
+    "raw": "| TO-05 | P | BVA | Check at 4.3 s | Dismissed |"
+  },
+  {
+    "id": "TO-06",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Tap ×",
+    "expected": "Dismissed immediately; timer cleared",
+    "raw": "| TO-06 | P | EP-V | Tap × | Dismissed immediately; timer cleared |"
+  },
+  {
+    "id": "TO-07",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "× hit area",
+    "expected": "≥ 44px",
+    "raw": "| TO-07 | P | BVA | × hit area | ≥ 44px |"
+  },
+  {
+    "id": "TO-08",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Trigger 1, 2, 5 toasts quickly",
+    "expected": "Queued/stacked; none overlaps another; all auto-dismiss",
+    "raw": "| TO-08 | N | BVA | Trigger 1, 2, 5 toasts quickly | Queued/stacked; none overlaps another; all auto-dismiss |"
+  },
+  {
+    "id": "TO-09",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Navigate while toast visible",
+    "expected": "Dismisses cleanly or persists; no ghost",
+    "raw": "| TO-09 | N | EP-I | Navigate while toast visible | Dismisses cleanly or persists; no ghost |"
+  },
+  {
+    "id": "TO-10",
+    "section": "21. Design system, navigation, logout, toasts (UI)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Keyboard open + toast",
+    "expected": "Toast visible; input not covered",
+    "raw": "| TO-10 | P | UI | Keyboard open + toast | Toast visible; input not covered |"
+  },
+  {
+    "id": "ZD-01",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Fresh boot, each role",
+    "expected": "0 visitors, 0 pre-approvals, 0 notices, 0 registration requests",
+    "raw": "| ZD-01 | P | BVA | Fresh boot, each role | 0 visitors, 0 pre-approvals, 0 notices, 0 registration requests |"
+  },
+  {
+    "id": "ZD-02",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Flats roster",
+    "expected": "28 flats present",
+    "raw": "| ZD-02 | P | EP-V | Flats roster | 28 flats present |"
+  },
+  {
+    "id": "ZD-03",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Try default logins: `guard/guard`, `resident/1234`, `admin/admin`",
+    "expected": "All fail",
+    "raw": "| ZD-03 | N | SEC | Try default logins: `guard/guard`, `resident/1234`, `admin/admin` | All fail |"
+  },
+  {
+    "id": "ZD-04",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "P",
+    "tech": "DT",
+    "steps": "Guard entry: resident decision {approve, reject, none} × pref {Ask, Leave} × category {Delivery, other}",
+    "expected": "Entry allowed only after explicit resident approval, except (Leave, Delivery) = left at gate",
+    "raw": "| ZD-04 | P | DT | Guard entry: resident decision {approve, reject, none} × pref {Ask, Leave} × category {Delivery, other} | Entry allowed only after explicit resident approval, except (Leave, Delivery) = left at gate |"
+  },
+  {
+    "id": "ZD-05",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "P",
+    "tech": "ST",
+    "steps": "New registration: pending → approved → login",
+    "expected": "Login only after approval",
+    "raw": "| ZD-05 | P | ST | New registration: pending → approved → login | Login only after approval |"
+  },
+  {
+    "id": "ZD-06",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Reload/restart with data",
+    "expected": "Data intact",
+    "raw": "| ZD-06 | P | EP-V | Reload/restart with data | Data intact |"
+  },
+  {
+    "id": "ZD-07",
+    "section": "22. Zero mock data and workflow rules – **[fresh]**",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Clear storage/DB",
+    "expected": "Returns to clean state; no errors",
+    "raw": "| ZD-07 | N | EP-I | Clear storage/DB | Returns to clean state; no errors |"
+  },
+  {
+    "id": "AU-01",
+    "section": "23. Audio (Web Audio API)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Ring arrives after a user gesture",
+    "expected": "Doorbell plays once per ring (AudioContext `running`)",
+    "raw": "| AU-01 | P | EP-V | Ring arrives after a user gesture | Doorbell plays once per ring (AudioContext `running`) |"
+  },
+  {
+    "id": "AU-02",
+    "section": "23. Audio (Web Audio API)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Valid OTP / entry allowed",
+    "expected": "Gate barrier sound",
+    "raw": "| AU-02 | P | EP-V | Valid OTP / entry allowed | Gate barrier sound |"
+  },
+  {
+    "id": "AU-03",
+    "section": "23. Audio (Web Audio API)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Invalid OTP / wrong PIN",
+    "expected": "Error buzzer",
+    "raw": "| AU-03 | P | EP-V | Invalid OTP / wrong PIN | Error buzzer |"
+  },
+  {
+    "id": "AU-04",
+    "section": "23. Audio (Web Audio API)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Keypad tap",
+    "expected": "Click per tap",
+    "raw": "| AU-04 | P | EP-V | Keypad tap | Click per tap |"
+  },
+  {
+    "id": "AU-05",
+    "section": "23. Audio (Web Audio API)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Ring arrives before any gesture",
+    "expected": "No console error; AudioContext `suspended`; resumes on first tap; visible cue if blocked",
+    "raw": "| AU-05 | N | EP-I | Ring arrives before any gesture | No console error; AudioContext `suspended`; resumes on first tap; visible cue if blocked |"
+  },
+  {
+    "id": "AU-06",
+    "section": "23. Audio (Web Audio API)",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "1, 5, 20 rapid events",
+    "expected": "No stuck/looping audio; no leaked contexts",
+    "raw": "| AU-06 | N | BVA | 1, 5, 20 rapid events | No stuck/looping audio; no leaked contexts |"
+  },
+  {
+    "id": "AU-07",
+    "section": "23. Audio (Web Audio API)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Loudness of all sounds **[manual]**",
+    "expected": "No clipping; comparable levels",
+    "raw": "| AU-07 | P | UI | Loudness of all sounds **[manual]** | No clipping; comparable levels |"
+  },
+  {
+    "id": "DB-01",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "flats SELECT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "ALLOW",
+      "residentOther": "ALLOW",
+      "guard": "ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-01 | flats SELECT | DENY | ALLOW | ALLOW | ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-02",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "flats INSERT/UPDATE/DELETE",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "DENY",
+      "admin": "DENY (seed-managed)"
+    },
+    "raw": "| DB-02 | flats INSERT/UPDATE/DELETE | DENY | DENY | DENY | DENY | DENY (seed-managed) |"
+  },
+  {
+    "id": "DB-03",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "visitors SELECT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "ALLOW",
+      "residentOther": "**DENY (0 rows)**",
+      "guard": "ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-03 | visitors SELECT | DENY | ALLOW | **DENY (0 rows)** | ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-04",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "visitors INSERT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "ALLOW (status = pending)",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-04 | visitors INSERT | DENY | DENY | DENY | ALLOW (status = pending) | ALLOW |"
+  },
+  {
+    "id": "DB-05",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "visitors UPDATE status → approved/rejected",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "ALLOW (own flat only)",
+      "residentOther": "DENY",
+      "guard": "DENY",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-05 | visitors UPDATE status → approved/rejected | DENY | ALLOW (own flat only) | DENY | DENY | ALLOW |"
+  },
+  {
+    "id": "DB-06",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "visitors UPDATE → inside/exited",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-06 | visitors UPDATE → inside/exited | DENY | DENY | DENY | ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-07",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "profiles UPDATE own status → approved",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "DENY",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-07 | profiles UPDATE own status → approved | DENY | DENY | DENY | DENY | ALLOW |"
+  },
+  {
+    "id": "DB-08",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "pre_approvals SELECT/INSERT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "ALLOW (own flat)",
+      "residentOther": "DENY",
+      "guard": "SELECT/verify ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-08 | pre_approvals SELECT/INSERT | DENY | ALLOW (own flat) | DENY | SELECT/verify ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-09",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "notices SELECT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "ALLOW",
+      "residentOther": "ALLOW",
+      "guard": "ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-09 | notices SELECT | DENY | ALLOW | ALLOW | ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-10",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "notices INSERT/UPDATE/DELETE",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "DENY",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-10 | notices INSERT/UPDATE/DELETE | DENY | DENY | DENY | DENY | ALLOW |"
+  },
+  {
+    "id": "DB-11",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "sos_events INSERT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "ALLOW (own flat)",
+      "residentOther": "DENY",
+      "guard": "ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-11 | sos_events INSERT | DENY | ALLOW (own flat) | DENY | ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-12",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "incident_log INSERT / SELECT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "ALLOW",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-12 | incident_log INSERT / SELECT | DENY | DENY | DENY | ALLOW | ALLOW |"
+  },
+  {
+    "id": "DB-13",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N/P Matrix",
+    "tech": "DT",
+    "tableOp": "settings / invite_code SELECT",
+    "matrix": {
+      "anon": "DENY",
+      "residentOwn": "DENY",
+      "residentOther": "DENY",
+      "guard": "DENY",
+      "admin": "ALLOW"
+    },
+    "raw": "| DB-13 | settings / invite_code SELECT | DENY | DENY | DENY | DENY | ALLOW |"
+  },
+  {
+    "id": "DB-14",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Apply schema + seed to empty DB; re-run",
+    "expected": "No errors; idempotent",
+    "raw": "| DB-14 | P | EP-V | Apply schema + seed to empty DB; re-run | No errors; idempotent |"
+  },
+  {
+    "id": "DB-15",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "`SELECT count(*) FROM flats`",
+    "expected": "28; unique numbers 101–704",
+    "raw": "| DB-15 | P | BVA | `SELECT count(*) FROM flats` | 28; unique numbers 101–704 |"
+  },
+  {
+    "id": "DB-16",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Count rows in visitors, notices, pre_approvals, registration requests after seed",
+    "expected": "0 each",
+    "raw": "| DB-16 | P | BVA | Count rows in visitors, notices, pre_approvals, registration requests after seed | 0 each |"
+  },
+  {
+    "id": "DB-17",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Insert flats `100`, `105`, `705`, `801`",
+    "expected": "Rejected by constraint",
+    "raw": "| DB-17 | N | BVA | Insert flats `100`, `105`, `705`, `801` | Rejected by constraint |"
+  },
+  {
+    "id": "DB-18",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Insert name of 1 and 51 chars; phone of 9 and 11 digits; password hash absent",
+    "expected": "Rejected by CHECK/NOT NULL",
+    "raw": "| DB-18 | N | BVA | Insert name of 1 and 51 chars; phone of 9 and 11 digits; password hash absent | Rejected by CHECK/NOT NULL |"
+  },
+  {
+    "id": "DB-19",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Insert OTP of 5 and 7 digits",
+    "expected": "Rejected",
+    "raw": "| DB-19 | N | BVA | Insert OTP of 5 and 7 digits | Rejected |"
+  },
+  {
+    "id": "DB-20",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Insert duplicate active OTP",
+    "expected": "Rejected (unique)",
+    "raw": "| DB-20 | N | EP-I | Insert duplicate active OTP | Rejected (unique) |"
+  },
+  {
+    "id": "DB-21",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Query `relrowsecurity` for all user-data tables",
+    "expected": "`true` for every table",
+    "raw": "| DB-21 | P | EP-V | Query `relrowsecurity` for all user-data tables | `true` for every table |"
+  },
+  {
+    "id": "DB-22",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Credential columns",
+    "expected": "Hashed and salted; no plaintext",
+    "raw": "| DB-22 | N | SEC | Credential columns | Hashed and salted; no plaintext |"
+  },
+  {
+    "id": "DB-23",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Visitor name `'; DROP TABLE visitors;--`",
+    "expected": "Stored literally; table intact",
+    "raw": "| DB-23 | N | SEC | Visitor name `'; DROP TABLE visitors;--` | Stored literally; table intact |"
+  },
+  {
+    "id": "DB-24",
+    "section": "24. PostgreSQL schema and RLS",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Delete a parent row with children",
+    "expected": "Cascade/restrict behaves as designed; no orphans",
+    "raw": "| DB-24 | P | EP-V | Delete a parent row with children | Cascade/restrict behaves as designed; no orphans |"
+  },
+  {
+    "id": "FL-01",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "SEC",
+    "steps": "Inspect storage after login",
+    "expected": "PIN/tokens only in secure storage (Keychain/Keystore), not SharedPreferences/files **[manual]**",
+    "raw": "| FL-01 | P | SEC | Inspect storage after login | PIN/tokens only in secure storage (Keychain/Keystore), not SharedPreferences/files **[manual]** |"
+  },
+  {
+    "id": "FL-02",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Enable biometric; relaunch; authenticate **[manual]**",
+    "expected": "Unlocks",
+    "raw": "| FL-02 | P | EP-V | Enable biometric; relaunch; authenticate **[manual]** | Unlocks |"
+  },
+  {
+    "id": "FL-03",
+    "section": "25. Flutter app",
+    "type": "N",
+    "tech": "BVA",
+    "steps": "Biometric fails 1, 2, 3 times **[manual]**",
+    "expected": "Falls back to PIN after 3; no bypass",
+    "raw": "| FL-03 | N | BVA | Biometric fails 1, 2, 3 times **[manual]** | Falls back to PIN after 3; no bypass |"
+  },
+  {
+    "id": "FL-04",
+    "section": "25. Flutter app",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Device without biometrics **[manual]**",
+    "expected": "Option hidden/disabled with explanation",
+    "raw": "| FL-04 | N | EP-I | Device without biometrics **[manual]** | Option hidden/disabled with explanation |"
+  },
+  {
+    "id": "FL-05",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "ST",
+    "steps": "Background app past timeout, return",
+    "expected": "Re-auth required (if timeout defined)",
+    "raw": "| FL-05 | P | ST | Background app past timeout, return | Re-auth required (if timeout defined) |"
+  },
+  {
+    "id": "FL-06",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Ring on device **[manual]**",
+    "expected": "Sound/vibration; overlay",
+    "raw": "| FL-06 | P | EP-V | Ring on device **[manual]** | Sound/vibration; overlay |"
+  },
+  {
+    "id": "FL-07",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Camera permission first use **[manual]**",
+    "expected": "Prompt; scan works",
+    "raw": "| FL-07 | P | EP-V | Camera permission first use **[manual]** | Prompt; scan works |"
+  },
+  {
+    "id": "FL-08",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "UI",
+    "steps": "360×640, 412×915, tablet, landscape",
+    "expected": "No overflow; DS rules hold",
+    "raw": "| FL-08 | P | UI | 360×640, 412×915, tablet, landscape | No overflow; DS rules hold |"
+  },
+  {
+    "id": "FL-09",
+    "section": "25. Flutter app",
+    "type": "P",
+    "tech": "UI",
+    "steps": "System dark mode",
+    "expected": "All roles legible; guard console high contrast",
+    "raw": "| FL-09 | P | UI | System dark mode | All roles legible; guard console high contrast |"
+  },
+  {
+    "id": "FL-10",
+    "section": "25. Flutter app",
+    "type": "N",
+    "tech": "SEC",
+    "steps": "Inspect release build",
+    "expected": "No debug flags; no hardcoded secrets/PIN",
+    "raw": "| FL-10 | N | SEC | Inspect release build | No debug flags; no hardcoded secrets/PIN |"
+  },
+  {
+    "id": "FL-11",
+    "section": "25. Flutter app",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Airplane mode actions",
+    "expected": "Graceful errors; no crash",
+    "raw": "| FL-11 | N | EP-I | Airplane mode actions | Graceful errors; no crash |"
+  },
+  {
+    "id": "WB-01",
+    "section": "26. Web preview (port 3000)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Open `http://localhost:3000`",
+    "expected": "Loads; 0 console errors",
+    "raw": "| WB-01 | P | EP-V | Open `http://localhost:3000` | Loads; 0 console errors |"
+  },
+  {
+    "id": "WB-02",
+    "section": "26. Web preview (port 3000)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Log in as each role",
+    "expected": "Correct dashboard and 4-tab nav",
+    "raw": "| WB-02 | P | EP-V | Log in as each role | Correct dashboard and 4-tab nav |"
+  },
+  {
+    "id": "WB-03",
+    "section": "26. Web preview (port 3000)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Guard tab + Resident tab side by side; guard rings",
+    "expected": "Resident tab receives ring within 2 s",
+    "raw": "| WB-03 | P | EP-V | Guard tab + Resident tab side by side; guard rings | Resident tab receives ring within 2 s |"
+  },
+  {
+    "id": "WB-04",
+    "section": "26. Web preview (port 3000)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Port 3000 busy at start",
+    "expected": "Clear error",
+    "raw": "| WB-04 | N | EP-I | Port 3000 busy at start | Clear error |"
+  },
+  {
+    "id": "WB-05",
+    "section": "26. Web preview (port 3000)",
+    "type": "P",
+    "tech": "BVA",
+    "steps": "Viewports 320, 375, 412, 768, 1280 px",
+    "expected": "No horizontal scroll; safe areas respected; nav ≥48dp",
+    "raw": "| WB-05 | P | BVA | Viewports 320, 375, 412, 768, 1280 px | No horizontal scroll; safe areas respected; nav ≥48dp |"
+  },
+  {
+    "id": "WB-06",
+    "section": "26. Web preview (port 3000)",
+    "type": "P",
+    "tech": "EP-V",
+    "steps": "Chrome, Firefox, Safari, Edge",
+    "expected": "Same behaviour and audio",
+    "raw": "| WB-06 | P | EP-V | Chrome, Firefox, Safari, Edge | Same behaviour and audio |"
+  },
+  {
+    "id": "WB-07",
+    "section": "26. Web preview (port 3000)",
+    "type": "N",
+    "tech": "EP-I",
+    "steps": "Throttle to Slow 3G; run key flows",
+    "expected": "Loading states; no duplicate submissions",
+    "raw": "| WB-07 | N | EP-I | Throttle to Slow 3G; run key flows | Loading states; no duplicate submissions |"
+  },
+  {
+    "id": "WB-08",
+    "section": "26. Web preview (port 3000)",
+    "type": "P",
+    "tech": "UI",
+    "steps": "Lighthouse/axe",
+    "expected": "No critical a11y violations; icon buttons labelled",
+    "raw": "| WB-08 | P | UI | Lighthouse/axe | No critical a11y violations; icon buttons labelled |"
+  },
+  {
+    "id": "E2E-01",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Guard logs walk-in → ring → resident approves → guard allows entry → guard checks out",
+    "expected": "States consistent in all 3 roles; history and counts correct",
+    "raw": "| E2E-01 | P | E2E | Guard logs walk-in → ring → resident approves → guard allows entry → guard checks out | States consistent in all 3 roles; history and counts correct |"
+  },
+  {
+    "id": "E2E-02",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Walk-in rejected by resident",
+    "expected": "Not Inside; history shows Rejected",
+    "raw": "| E2E-02 | P | E2E | Walk-in rejected by resident | Not Inside; history shows Rejected |"
+  },
+  {
+    "id": "E2E-03",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Walk-in unanswered 60 s",
+    "expected": "\"No response\"; guard can re-ring or log",
+    "raw": "| E2E-03 | P | E2E | Walk-in unanswered 60 s | \"No response\"; guard can re-ring or log |"
+  },
+  {
+    "id": "E2E-04",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Resident pre-approves → shares → guard verifies OTP → checkout",
+    "expected": "Entry logged; OTP single-use afterwards",
+    "raw": "| E2E-04 | P | E2E | Resident pre-approves → shares → guard verifies OTP → checkout | Entry logged; OTP single-use afterwards |"
+  },
+  {
+    "id": "E2E-05",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Register resident → admin approves → login",
+    "expected": "Works only after approval",
+    "raw": "| E2E-05 | P | E2E | Register resident → admin approves → login | Works only after approval |"
+  },
+  {
+    "id": "E2E-06",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Admin publishes Urgent notice",
+    "expected": "Resident and guard both see it",
+    "raw": "| E2E-06 | P | E2E | Admin publishes Urgent notice | Resident and guard both see it |"
+  },
+  {
+    "id": "E2E-07",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "P",
+    "tech": "E2E",
+    "steps": "Resident SOS → guard acknowledges → logged → admin sees",
+    "expected": "Complete chain",
+    "raw": "| E2E-07 | P | E2E | Resident SOS → guard acknowledges → logged → admin sees | Complete chain |"
+  },
+  {
+    "id": "E2E-08",
+    "section": "27. End-to-end flows (all roles)",
+    "type": "N",
+    "tech": "E2E",
+    "steps": "Try cross-role actions via UI and API (resident approves users; guard publishes notices; admin-only settings)",
+    "expected": "All blocked",
+    "raw": "| E2E-08 | N | E2E | Try cross-role actions via UI and API (resident approves users; guard publishes notices; admin-only settings) | All blocked |"
+  }
+]

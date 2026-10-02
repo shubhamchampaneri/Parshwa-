@@ -1,0 +1,226 @@
+[
+  {
+    "id": "TC-AUTH-01",
+    "name": "Splash Screen & Branding Load",
+    "status": "PASS",
+    "actualResult": "Splash loaded with official app icon, terracotta building photo, and \"7 Floors • 28 Flats\" banner.",
+    "evidenceFile": "qa_evidence/TC-AUTH-01.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-AUTH-02",
+    "name": "3-Way Role Selector Verification",
+    "status": "PASS",
+    "actualResult": "Role toggle buttons (Resident, Guard, Admin) successfully switch application login state.",
+    "evidenceFile": "qa_evidence/TC-AUTH-02.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-AUTH-03",
+    "name": "Password Visibility & Input Controls",
+    "status": "PASS",
+    "actualResult": "Eye toggle transitions input type between password and text with correct SVG state.",
+    "evidenceFile": "qa_evidence/TC-AUTH-03.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-AUTH-04",
+    "name": "Guard Registration & Secret Code Validation",
+    "status": "PASS",
+    "actualResult": "Guard registration accepts PPGUARD2026 invite code and authorizes Gate Console session.",
+    "evidenceFile": "qa_evidence/TC-AUTH-04.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-AUTH-05",
+    "name": "Forgot Password Recovery Flow",
+    "status": "PASS",
+    "actualResult": "Forgot Password modal opens cleanly and confirms dispatch of recovery token.",
+    "evidenceFile": "qa_evidence/TC-AUTH-05.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-AUTH-06",
+    "name": "Numeric Keypad PIN Unlock",
+    "status": "PASS",
+    "actualResult": "4-digit security PIN (5829) verified successfully; unlocked into Resident Dashboard.",
+    "evidenceFile": "qa_evidence/TC-AUTH-06.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-RES-01",
+    "name": "Resident Dashboard Roster & Complex Header",
+    "status": "PASS",
+    "actualResult": "Displays Flat 402 resident profile, 28 residences complex banner, and action buttons.",
+    "evidenceFile": "qa_evidence/TC-RES-01.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-RES-02",
+    "name": "Gate Delivery Preference Policy Toggle",
+    "status": "PASS",
+    "actualResult": "Policy toggles seamlessly between \"Ask first\" and \"Leave packages at gate with security\".",
+    "evidenceFile": "qa_evidence/TC-RES-02.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-RES-03",
+    "name": "Pre-Approval Pass & QR Code Generation",
+    "status": "PASS",
+    "actualResult": "Pass generated with 6-digit OTP (409-151) and universal WhatsApp QR code.",
+    "evidenceFile": "qa_evidence/TC-RES-03.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-RES-04",
+    "name": "Gate Entry OTP Clipboard Copy",
+    "status": "PASS",
+    "actualResult": "Copy button executes clipboard write and triggers in-app confirmation toast.",
+    "evidenceFile": "qa_evidence/TC-RES-04.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-RES-05",
+    "name": "Gate Barrier Admission from Pre-Approval",
+    "status": "PASS",
+    "actualResult": "Amit Verma admitted via Gate Pass; barrier opened with audio chime and logged inside Flat 402.",
+    "evidenceFile": "qa_evidence/TC-RES-05.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-RES-06",
+    "name": "Resident Emergency SOS Alert Broadcast",
+    "status": "PASS",
+    "actualResult": "Emergency SOS triggers siren chime and broadcasts alarm from Flat 402 to Main Gate Vikram.",
+    "evidenceFile": "qa_evidence/TC-RES-06.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-01",
+    "name": "Security Guard Gate Console Rendering",
+    "status": "PASS",
+    "actualResult": "Gate Console displays Guard Vikram, Shift A status, and active metrics (Inside: 3).",
+    "evidenceFile": "qa_evidence/TC-GRD-01.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-02",
+    "name": "Walk-In Visitor Entry Modal & Camera Capture",
+    "status": "PASS",
+    "actualResult": "Modal opened; camera capture cycle updated avatar from 👤 to 👨‍💼.",
+    "evidenceFile": "qa_evidence/TC-GRD-02.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-03",
+    "name": "7-Floor 28-Flat Selector & Resident Verification",
+    "status": "PASS",
+    "actualResult": "Floor tabs (F1–F7) render units dynamically and auto-populate verified resident credentials.",
+    "evidenceFile": "qa_evidence/TC-GRD-03.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-04",
+    "name": "Walk-In Direct Gate Entry Clearance",
+    "status": "PASS",
+    "actualResult": "Admit Directly cleared visitor entry, incremented inside count, and triggered gate open chime.",
+    "evidenceFile": "qa_evidence/TC-GRD-04.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-05",
+    "name": "Gate Intercom Ring & Resident Approval Flow",
+    "status": "PASS",
+    "actualResult": "Doorbell intercom popup alerted flat; Allow Entry confirmed admission without resetting console role.",
+    "evidenceFile": "qa_evidence/TC-GRD-05.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-06",
+    "name": "Gate Pass Verifier & OTP Authentication",
+    "status": "PASS",
+    "actualResult": "Pass Verifier validated active OTP (409-151); barrier opened and visitor admitted.",
+    "evidenceFile": "qa_evidence/TC-GRD-06.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-GRD-07",
+    "name": "Visitor Exit / Checkout Recording",
+    "status": "PASS",
+    "actualResult": "Marked visitor exited; decremented inside campus count and logged exit timestamp.",
+    "evidenceFile": "qa_evidence/TC-GRD-07.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-SOC-01",
+    "name": "Dedicated Visitors Screen & Bottom Nav Routing",
+    "status": "PASS",
+    "actualResult": "Navigates smoothly to full Visitor Activity Log screen with terracotta tab highlight.",
+    "evidenceFile": "qa_evidence/TC-SOC-01.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-SOC-02",
+    "name": "Visitor Activity Status Filter Tabs",
+    "status": "PASS",
+    "actualResult": "All filter chips (Inside, Passes, Exited, All) dynamically update the displayed visitor cards.",
+    "evidenceFile": "qa_evidence/TC-SOC-02.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-SOC-03",
+    "name": "Real-Time Search Keyword Filtering",
+    "status": "PASS",
+    "actualResult": "Search box filters visitor roster by flat number, visitor name, and contact details in real-time.",
+    "evidenceFile": "qa_evidence/TC-SOC-03.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-SOC-04",
+    "name": "Society Bulletins & Notices Screen",
+    "status": "PASS",
+    "actualResult": "Renders 4 active society bulletins (Lift inspection, Water tank cleaning, gate rule, parking bay repaint).",
+    "evidenceFile": "qa_evidence/TC-SOC-04.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-SOC-05",
+    "name": "User Profile Modal & Safe Logout",
+    "status": "PASS",
+    "actualResult": "Profile modal opens with premise details; Logout successfully revokes session and returns to Sign In.",
+    "evidenceFile": "qa_evidence/TC-SOC-05.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-ADM-01",
+    "name": "Committee Admin Console Access",
+    "status": "PASS",
+    "actualResult": "Admin authentication opens Parshwa Platinum Committee console with Secretary profile.",
+    "evidenceFile": "qa_evidence/TC-ADM-01.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-ADM-02",
+    "name": "28 Flats Directory & Capacity Roster Audit",
+    "status": "PASS",
+    "actualResult": "All 28 flats across 7 floors (101–704) monitored with resident capacity counters (max 4/flat).",
+    "evidenceFile": "qa_evidence/TC-ADM-02.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-ADM-03",
+    "name": "Guard Registration Invite Code Rotation",
+    "status": "PASS",
+    "actualResult": "Guard Secret Invite Code rotated from PPGUARD2026 to PPGUARD1069 with confirmation toast.",
+    "evidenceFile": "qa_evidence/TC-ADM-03.png",
+    "severity": "N/A"
+  },
+  {
+    "id": "TC-ADM-04",
+    "name": "Committee Resident Membership Approval",
+    "status": "PASS",
+    "actualResult": "Admin approval action successfully verifies and activates Flat 302 resident membership.",
+    "evidenceFile": "qa_evidence/TC-ADM-04.png",
+    "severity": "N/A"
+  }
+]
